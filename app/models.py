@@ -1,3 +1,21 @@
 from django.db import models
 
-# Create your models here.
+class Menu_Item(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    price = models.DecimalField()
+    featured = models.BooleanField(default=False)
+    image = models.ImageField()
+
+class Newsletter(models.Model):
+    title = models.CharField(max_length=255)
+    para_one = models.TextField()
+    para_two = models.TextField(null=True)
+    para_three = models.TextField(null=True)
+
+class Merch_Item(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    price = models.DecimalField()
+    featured = models.BooleanField(default=False)
+    image = models.ImageField()
