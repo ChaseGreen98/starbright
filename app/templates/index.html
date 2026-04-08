@@ -1,14 +1,24 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starbright</title>
+    <meta charset="utf-8">
+    <title>{% block title %}Starbright Cafe{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
+
 <body>
-    {% block content %}
-    
-    {% endblock content %}
-    
+    <main>
+        <div id="navbar">
+            <a href="{% url 'behind_counter_view' %}">Behind the Counter</a>
+            <a href="{% url 'menu_view' %}">Menu</a>
+            <a href="{% url 'community_view' %}">Community</a>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
+
 </html>
