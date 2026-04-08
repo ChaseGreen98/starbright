@@ -1,3 +1,6 @@
 from django.contrib import admin
+from app.models import *
 
-# Register your models here.
+admin.site.register(Menu_Item)
+admin.site.register(Merch_Item)
+admin.site.register(Newsletter)
