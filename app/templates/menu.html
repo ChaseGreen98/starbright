@@ -6,4 +6,29 @@
 
 <h1>Menu</h1>
 
+{% for item in page_obj %}
+    <div class="menu_item_card">
+        <p>{% item.name %}</item></p>
+        <p>{% item.description %}</p>
+        <p>{% item.price %}</p>
+        <p>{% item.image %}</p>
+    </div>
+{% endfor %}
+
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+            ← Previous
+        </a>
+    {% endif %}
+
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+            Next →
+        </a>
+    {% endif %}
+</div>
+
 {% endblock content %}

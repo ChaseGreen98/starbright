@@ -21,7 +21,7 @@ def menu_view(request):
     paginator = Paginator(items, 4)
     page_obj = paginator.get_page(request.GET.get("page"))
 
-    return render(request, "menu.html")
+    return render(request, "menu.html", {"page_obj": page_obj})
     # ^^ i dont know enough about pagination to know what else to add here but i would assume something needs to be added
 
 def merch_view(request):
@@ -30,5 +30,5 @@ def merch_view(request):
     paginator = Paginator(items, 4)
     page_obj = paginator.get_page(request.GET.get("page"))
 
-    return render(request, "merch.html")
+    return render(request, "merch.html", {"page_obj": page_obj})
     # ^^ and also here
