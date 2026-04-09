@@ -34,6 +34,24 @@ def merch_view(request):
     return render(request, "merch.html", {"page_obj": page_obj})
 
 @login_required
+def owner_menu_view(request):
+    items = Menu_Item.objects.all()
+
+    paginator = Paginator(items, 4)
+    page_obj = paginator.get_page(request.GET.get("page"))
+
+    return render(request, "owner_menu.html", {"page_obj": page_obj})
+
+@login_required
+def owner_merch_view(request):
+    items = Merch_Item.objects.all()
+
+    paginator = Paginator(items, 4)
+    page_obj = paginator.get_page(request.GET.get("page"))
+
+    return render(request, "owner_merch.html", {"page_obj": page_obj})
+
+@login_required
 def menu_create_form_view(request):
     if request.method == "POST":
         form = MenuForm(request.POST)
