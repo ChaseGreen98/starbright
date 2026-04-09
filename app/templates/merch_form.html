@@ -1,4 +1,11 @@
 {% extends "index.html" %}
 {% block content %}
 
+<div class="merch_form_container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+</div>
+
 {% endblock content %}
