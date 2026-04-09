@@ -15,7 +15,9 @@ def behind_counter_view(request):
     return render(request, "behind_counter.html")
 
 def community_view(request):
-    return render(request, "community.html")
+    current_newsletter = Newsletter.objects.latest('id')
+
+    return render(request, "community.html", {"newsletter": current_newsletter})
 
 def menu_view(request):
     items = Menu_Item.objects.all()
