@@ -19,6 +19,16 @@ def community_view(request):
 
     return render(request, "community.html", {"newsletter": current_newsletter})
 
+def login_view(request):
+    if request.method == "POST":
+        form = CustomAuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            login(request, form.get_user())
+            return redirect("owner_portal")
+    else:
+        form = CustomAuthenticationForm()
+    return render(request, "login.html", {"form": form})
+
 def menu_view(request):
     items = Menu_Item.objects.all()
 
