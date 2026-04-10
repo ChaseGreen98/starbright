@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Brittany;
+    src: url(/app/static/fonts/brittanysignature-webfont.woff) format('woff');
+    src: url(/app/static/fonts/brittanysignature-webfont.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: Doulossil;
+    src: url(/app/static/fonts/doulossilr-webfont.woff) format('woff');
+    src: url(/app/static/fonts/doulossilr-webfont.woff2) format('woff2');
+}
+
+/* NAVBAR */
+
+#navbar {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    justify-content: space-between;
+    box-shadow: 0px 0px 25px rgba(30, 30, 30, 25);
+}
+
+#nav-items {
+    justify-self: flex-start;
+    align-items: center;
+    display: flex;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: rgb(30, 30, 30);
+    margin-left: 20px;
+    font-family: Doulossil;
+}
+
+#logo {
+    max-height: 100px;
+    padding: 10px;
+}
+
+#shopping-cart-div {
+    justify-self: flex-end;
+    padding: 10px;
+}
+
+#shopping-cart {
+    max-height: 75px;
+}
+
+/* HOME PAGE (LANDING PAGE) */
+
+h1 {
+    font-family: Brittany;
+    font-weight: 250;
+}
+
+h2 {
+    font-family: Doulossil;
+    font-weight: 250;
+}
+
+body {
+    margin: 0;
+}
