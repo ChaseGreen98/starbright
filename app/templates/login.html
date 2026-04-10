@@ -1,4 +1,17 @@
 {% extends "index.html" %}
 {% block content %}
 
+<div class="login_form_container">
+    <form method="POST" class="auth-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="auth-actions">
+            <button type="submit">
+                Login
+            </button>
+        </div>
+    </form>
+</div>
+
 {% endblock content %}

@@ -15,7 +15,19 @@ def behind_counter_view(request):
     return render(request, "behind_counter.html")
 
 def community_view(request):
-    return render(request, "community.html")
+    current_newsletter = Newsletter.objects.latest('id')
+
+    return render(request, "community.html", {"newsletter": current_newsletter})
+
+def login_view(request):
+    if request.method == "POST":
+        form = CustomAuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            login(request, form.get_user())
+            return redirect("owner_portal")
+    else:
+        form = CustomAuthenticationForm()
+    return render(request, "login.html", {"form": form})
 
 def menu_view(request):
     items = Menu_Item.objects.all()
@@ -32,6 +44,24 @@ def merch_view(request):
     page_obj = paginator.get_page(request.GET.get("page"))
 
     return render(request, "merch.html", {"page_obj": page_obj})
+
+@login_required
+def owner_menu_view(request):
+    items = Menu_Item.objects.all()
+
+    paginator = Paginator(items, 4)
+    page_obj = paginator.get_page(request.GET.get("page"))
+
+    return render(request, "owner_menu.html", {"page_obj": page_obj})
+
+@login_required
+def owner_merch_view(request):
+    items = Merch_Item.objects.all()
+
+    paginator = Paginator(items, 4)
+    page_obj = paginator.get_page(request.GET.get("page"))
+
+    return render(request, "owner_merch.html", {"page_obj": page_obj})
 
 @login_required
 def menu_create_form_view(request):
