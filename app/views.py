@@ -16,7 +16,6 @@ def behind_counter_view(request):
 
 def community_view(request):
     current_newsletter = Newsletter.objects.latest('id')
-
     return render(request, "community.html", {"newsletter": current_newsletter})
 
 def login_view(request):
