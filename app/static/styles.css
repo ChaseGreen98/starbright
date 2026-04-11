@@ -10,6 +10,30 @@
     src: url(/app/static/fonts/doulossilr-webfont.woff2) format('woff2');
 }
 
+/* BASE STYLING (EXTENDS ACROSS ALL PAGES) */
+
+h1 {
+    font-family: Brittany;
+    font-weight: 250;
+    color: rgb(30, 30, 30);
+
+}
+
+h2 {
+    font-family: Doulossil;
+    font-weight: 250;
+    color: rgb(30, 30, 30);
+}
+
+p, a {
+    font-family: Doulossil;
+    color: rgb(30, 30, 30);
+}
+
+body {
+    margin: 0;
+}
+
 /* NAVBAR */
 
 #navbar {
@@ -18,7 +42,7 @@
     top: 0px;
     align-items: center;
     margin: 0;
-    height: fit-content;
+    height: 100px;
     justify-content: space-between;
     background-color: white;
     box-shadow: 0px 0px 25px rgba(30, 30, 30, 25);
@@ -26,30 +50,34 @@
 
 #nav-items {
     justify-self: flex-start;
-    align-items: center;
+    align-self: center;
     display: flex;
-    height: inherit;
+    margin: 0;
 }
 
-#nav-links {
-    height: inherit;
-    display: block;
-}
-
-#nav-links a {
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
-    color: rgb(30, 30, 30);
-    margin-left: 20px;
     font-family: Doulossil;
+    font-size: 20px;
+    min-width: 150px;
+    height: 100px;
 }
 
-#nav-links a:hover {
-    background: linear-gradient(to right, white, pink, white);
+.nav-links:hover {
+    background: linear-gradient(to right, white, #ff92ba, white);
+}
+
+#logo-anchor {
+    display: flex;
+    height: 100px;
 }
 
 #logo {
-    max-height: 100px;
     padding: 10px;
+    margin-right: 20px;
 }
 
 #shopping-cart-link {
@@ -61,29 +89,78 @@
     max-height: 50px;
 }
 
+/* CONTACT FOOTER */
+
+#contact-section {
+    margin: 0;
+    background-color: rgb(30, 30, 30);
+    width: 100%;
+}
+
+#contact-title {
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
 /* HOME PAGE (LANDING PAGE) */
 
-h1 {
-    font-family: Brittany;
-    font-weight: 250;
+#intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    margin-top: -25px;
+    background-image: url(/app/static/images/gradient-glitter.png);
+    background-repeat: repeat-x;
+    background-position: top;
+    background-size:auto;
 }
 
-h2 {
-    font-family: Doulossil;
-    font-weight: 250;
-}
-
-body {
+#home-title-1 {
+    text-align: center;
     margin: 0;
+    font-size: 75px;
+    cursor: default;
+}
+
+#home-title-2 {
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-top: -50px;
+    cursor: default;
+}
+
+#view-menu-link {
+    margin-top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#divider {
+    margin: 0;
+    width: 100%;
+    margin-top: -50px;
 }
 
 /* BEHIND THE COUNTER */
 
 .bio-section {
-    background: url("/static/pink-gold-marble.jpg") no-repeat center/cover;
-    padding: 120px 20px;
+    background: url("/app/static/images/pink-marble.png") no-repeat center/cover;
+    padding: 20px;
     text-align: center;
     color: #333;
+}
+
+#white-panel {
+    background-color: white;
+    border: 5px solid #c9a227;
+    border-radius: 50px;
+    width: fit-content;
+    padding: 20px 50px;
+    justify-self: center;
 }
 
 .bio-title {
@@ -154,9 +231,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
-    background: radial-gradient(circle at top, rgba(255, 77, 166, 0.12), transparent 25%),
-                radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.16), transparent 22%),
-                #090606;
+    background: radial-gradient(circle at top, rgba(255, 77, 166, 0.12), transparent 25%), radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.16), transparent 22%), #090606;
 }
 
 .login_form_container {
@@ -269,7 +344,7 @@ body {
         font-size: 2.2rem;
     }
 }
-/* Page background */
+
 .login-page {
     min-height: 100vh;
     display: flex;
@@ -279,14 +354,12 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-/* Container */
 .login_form_container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-/* Panel */
 .login-panel {
     background: #ffffff;
     padding: 50px 40px;
@@ -294,14 +367,11 @@ body {
     border-radius: 18px;
     text-align: center;
     box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
-
-    /* Animation */
     animation: fadeUp 0.8s ease forwards;
     opacity: 0;
     transform: translateY(20px);
 }
 
-/* Header */
 .login-header h1 {
     font-size: 32px;
     margin-bottom: 10px;
@@ -322,7 +392,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Form inputs */
 .auth-form input {
     width: 100%;
     padding: 12px;
@@ -338,7 +407,6 @@ body {
     box-shadow: 0 0 8px rgba(201, 162, 39, 0.2);
 }
 
-/* Button */
 .auth-actions button {
     width: 100%;
     padding: 12px;
@@ -356,7 +424,6 @@ body {
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
 }
 
-/* Animation keyframes */
 @keyframes fadeUp {
     to {
         opacity: 1;

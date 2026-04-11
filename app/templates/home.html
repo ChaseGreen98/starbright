@@ -1,8 +1,18 @@
 {% extends "index.html" %}
+{% load static %}
 
 {% block content %}
 
-<h1>Starbright</h1>
-<h2>CAFE</h2>
+<div id="intro-section">
+    <h1 id="home-title-1">Starbright</h1>
+    <h2 id="home-title-2">CAFE</h2>
+    <a id="view-menu-link" href="{% url 'menu_view' %}">← view the menu →</a>
+</div>
+
+<img id="divider" src="{% static '/images/gold-divider.png' %}">
+
+<div id="previews-section">
+</div>
+
 
 {% endblock content %}

@@ -13,21 +13,24 @@
     <main>
         <div id="navbar">
             <div id="nav-items">
-                <a href="{% url 'home' %}">
+                <a id="logo-anchor" href="{% url 'home' %}">
                     <img id="logo" src="{% static '/images/logo.jpg' %}">
                 </a>
-                <div id="nav-links">
-                    <a href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
-                    <a href="{% url 'menu_view' %}">MENU</a>
-                    <a href="{% url 'community_view' %}">COMMUNITY</a>
-                </div>
+                <a class="nav-links" href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
+                <a class="nav-links" href="{% url 'menu_view' %}">MENU</a>
+                <a class="nav-links" href="{% url 'community_view' %}">COMMUNITY</a>
             </div>
             <a href="{% url 'menu_view' %}" id="shopping-cart-link">
                 <img id="shopping-cart" src="{% static '/images/shopping-cart.png' %}">
             </a>
         </div>
+
         {% block content %}
         {% endblock content%}
+
+        <div id="contact-section">
+            <h1 id="contact-title">Contact us</h1>
+        </div>
     </main>
 </body>
 
