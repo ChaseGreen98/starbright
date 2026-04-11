@@ -66,3 +66,77 @@ h2 {
 body {
     margin: 0;
 }
+
+.bio-section {
+    background: url("/static/pink-gold-marble.jpg") no-repeat center/cover;
+    padding: 120px 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* TITLE */
+.bio-title {
+    font-size: 42px;
+    color: #c9a646; /* soft gold */
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* IMAGE */
+.bio-image {
+    width: 220px;
+    border-radius: 50%;
+    border: 2px solid #e6c76b;
+    padding: 6px;
+    background: #fff;
+}
+
+/* NAME */
+.bio-name {
+    margin-top: 25px;
+    font-size: 26px;
+    color: #e754a8; /* soft pink */
+}
+
+/* ROLE */
+.bio-role {
+    color: #777;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+/* DIVIDER (THIS ADDS LUXURY FEEL) */
+.divider {
+    width: 60px;
+    height: 2px;
+    background: #d4af37;
+    margin: 20px auto 30px;
+}
+
+/* TEXT */
+.bio-text {
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* BUTTON */
+.bio-btn {
+    margin-top: 30px;
+    background: #e754a8;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bio-btn:hover {
+    background: #d4af37;
+    color: #fff;
+}
