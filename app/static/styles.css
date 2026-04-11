@@ -14,9 +14,13 @@
 
 #navbar {
     display: flex;
+    position: sticky;
+    top: 0px;
     align-items: center;
     margin: 0;
+    height: fit-content;
     justify-content: space-between;
+    background-color: white;
     box-shadow: 0px 0px 25px rgba(30, 30, 30, 25);
 }
 
@@ -24,6 +28,12 @@
     justify-self: flex-start;
     align-items: center;
     display: flex;
+    height: inherit;
+}
+
+#nav-links {
+    height: inherit;
+    display: block;
 }
 
 #nav-links a {
@@ -33,22 +43,22 @@
     font-family: Doulossil;
 }
 
-#nav-items a {
-    margin-left: 0px;
-    padding: 10px;
+#nav-links a:hover {
+    background: linear-gradient(to right, white, pink, white);
 }
 
 #logo {
     max-height: 100px;
+    padding: 10px;
 }
 
-#shopping-cart-div {
+#shopping-cart-link {
     justify-self: flex-end;
     padding: 10px;
 }
 
 #shopping-cart {
-    max-height: 75px;
+    max-height: 50px;
 }
 
 /* HOME PAGE (LANDING PAGE) */
@@ -67,6 +77,8 @@ body {
     margin: 0;
 }
 
+/* BEHIND THE COUNTER */
+
 .bio-section {
     background: url("/static/pink-gold-marble.jpg") no-repeat center/cover;
     padding: 120px 20px;
@@ -74,7 +86,6 @@ body {
     color: #333;
 }
 
-/* TITLE */
 .bio-title {
     font-size: 42px;
     color: #c9a646; /* soft gold */
@@ -82,7 +93,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* IMAGE */
 .bio-image {
     width: 220px;
     border-radius: 50%;
@@ -91,14 +101,12 @@ body {
     background: #fff;
 }
 
-/* NAME */
 .bio-name {
     margin-top: 25px;
     font-size: 26px;
     color: #e754a8; /* soft pink */
 }
 
-/* ROLE */
 .bio-role {
     color: #777;
     font-size: 14px;
@@ -106,7 +114,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* DIVIDER (THIS ADDS LUXURY FEEL) */
 .divider {
     width: 60px;
     height: 2px;
@@ -114,7 +121,6 @@ body {
     margin: 20px auto 30px;
 }
 
-/* TEXT */
 .bio-text {
     max-width: 550px;
     margin: 0 auto;
@@ -122,7 +128,6 @@ body {
     line-height: 1.8;
 }
 
-/* BUTTON */
 .bio-btn {
     margin-top: 30px;
     background: #e754a8;
