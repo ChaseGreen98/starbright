@@ -13,7 +13,9 @@
     <main>
         <div id="navbar">
             <div id="nav-items">
-                <img id="logo" src="{% static '/images/logo.jpg' %}">
+                <a href="{% url 'home' %}">
+                    <img id="logo" src="{% static '/images/logo.jpg' %}">
+                </a>
                 <div id="nav-links">
                     <a href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
                     <a href="{% url 'menu_view' %}">MENU</a>
