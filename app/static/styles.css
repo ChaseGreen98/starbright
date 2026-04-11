@@ -358,3 +358,209 @@ body {
         transform: translateY(0);
     }
 }
+.community-section {
+    background: url("/static/pink-gold-marble.jpg") no-repeat center/cover;
+    padding: 120px 20px;
+    text-align: center;
+    color: #444;
+}
+
+/* TITLE */
+.community-title {
+    font-size: 42px;
+    color: #c9a646; /* gold */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* INTRO */
+.community-intro {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* CARDS */
+.community-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    width: 260px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    transition: all 0.3s ease;
+}
+
+/* CARD TEXT */
+.card h2 {
+    color: #e754a8; /* pink */
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* HOVER (FINISHED PROPERLY) */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+}
+
+/* QUOTE */
+.community-quote {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-style: italic;
+    color: #e754a8;
+    font-size: 18px;
+}
+
+/* BUTTON */
+.community-btn {
+    background: #e754a8;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.community-btn:hover {
+    background: #d4af37;
+    color: #fff;
+}
+
+/* OVERRIDE COMMUNITY SECTION LUXURY STYLING */
+.community-section {
+    background: linear-gradient(180deg, rgba(8, 4, 6, 0.96) 0%, rgba(14, 8, 12, 0.99) 100%);
+    padding: 100px 20px;
+    text-align: center;
+    color: #f4ebe6;
+    min-height: calc(100vh - 80px);
+    position: relative;
+}
+
+.community-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255, 77, 166, 0.14), transparent 20%),
+                radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.16), transparent 18%);
+    pointer-events: none;
+}
+
+.community-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.community-title {
+    font-size: 3rem;
+    color: #d4af37;
+    letter-spacing: 0.22em;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.community-intro {
+    max-width: 640px;
+    margin: 0 auto 60px;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #e8d7c3;
+}
+
+.community-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+    justify-items: center;
+    margin-bottom: 60px;
+}
+
+.card {
+    background: rgba(18, 12, 15, 0.94);
+    padding: 32px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h2 {
+    color: #ff92c6;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ddd2c4;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(212, 175, 55, 0.25);
+}
+
+.community-quote {
+    max-width: 660px;
+    margin: 0 auto 40px;
+    font-style: italic;
+    color: #ffb8db;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.community-btn {
+    background: linear-gradient(135deg, #ff4da6, #d4af37);
+    color: #120608;
+    border: none;
+    padding: 14px 38px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.community-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.98;
+}
+
+@media (max-width: 720px) {
+    .community-section {
+        padding: 60px 16px;
+    }
+
+    .community-title {
+        font-size: 2.3rem;
+    }
+
+    .community-intro {
+        margin-bottom: 40px;
+    }
+
+    .community-btn {
+        width: 100%;
+    }
+}
