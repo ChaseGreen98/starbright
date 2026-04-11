@@ -45,6 +45,10 @@ def merch_view(request):
     return render(request, "merch.html", {"page_obj": page_obj})
 
 @login_required
+def owner_portal_view(request):
+    return render(request, "owner_portal.html")
+
+@login_required
 def owner_menu_view(request):
     items = Menu_Item.objects.all()
 
@@ -69,7 +73,7 @@ def menu_create_form_view(request):
         if form.is_valid():
             menu_item = form.save(commit=False)
             menu_item.save()
-            return redirect("owner_portal")
+            return redirect("owner_portal_view")
     else:
         form = MenuForm()
     return render(request, "menu_form.html", {"form": form})
@@ -82,7 +86,7 @@ def menu_update_form_view(request, id):
         form = MenuForm(request.POST, instance=menu_item)
         if form.is_valid():
             form.save()
-            return redirect("owner_portal")
+            return redirect("owner_portal_view")
     else:
         form = MenuForm(instance=menu_item)
 
@@ -95,7 +99,7 @@ def merch_create_form_view(request):
         if form.is_valid():
             merch_item = form.save(commit=False)
             merch_item.save()
-            return redirect("owner_portal")
+            return redirect("owner_portal_view")
     else:
         form = MerchForm()
     return render(request, "merch_form.html", {"form": form})
@@ -108,7 +112,7 @@ def merch_update_form_view(request, id):
         form = MerchForm(request.POST, instance=merch_item)
         if form.is_valid():
             form.save()
-            return redirect("owner_portal")
+            return redirect("owner_portal_view")
     else:
         form = MerchForm(instance=merch_item)
 
@@ -121,7 +125,7 @@ def news_create_form_view(request):
         if form.is_valid():
             news_item = form.save(commit=False)
             news_item.save()
-            return redirect("owner_portal")
+            return redirect("owner_portal_view")
     else:
         form = NewsForm()
     return render(request, "news_form.html", {"form": form})
@@ -134,7 +138,7 @@ def news_update_form_view(request, id):
         form = NewsForm(request.POST, instance=news_item)
         if form.is_valid():
             form.save()
-            return redirect("owner_portal")
+            return redirect("owner_portal_view")
     else:
         form = NewsForm(instance=news_item)
 
@@ -147,7 +151,7 @@ def password_change_view(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, request.user)
-            return redirect("owner_portal")
+            return redirect("owner_portal_view")
     else:
         form = CustomPasswordChangeForm(user=request.user)
     return render(request, "password_update.html", {"form": form})
