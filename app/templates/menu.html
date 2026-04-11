@@ -8,11 +8,13 @@
 
 {% for item in page_obj %}
     <div class="menu_item_card">
-        <p>{% item.name %}</item></p>
-        <p>{% item.description %}</p>
-        <p>{% item.price %}</p>
-        <p>{% item.image %}</p>
+        <p>{{ item.name }}</p>
+        <p>{{ item.description }}</p>
+        <p>{{ item.price }}</p>
+        <p>{{ item.image }}</p>
     </div>
+    {% empty %}
+        <p>None in database</p>
 {% endfor %}
 
 <div class="pagination">
