@@ -42,11 +42,17 @@
 
 </div>
 
+{% if newsletter %}
 <div class="newsletter-card">
-    {% newsletter.title %}
-    {% newsletter.para_one %}
-    {% newsletter.para_two %}
-    {% newsletter.para_three %}
+    {{ newsletter.title }}
+    {{ newsletter.para_one }}
+    {{ newsletter.para_two }}
+    {{ newsletter.para_three }}
 </div>
+{% else %}
+<div>
+    <p>Nothing in database</p>
+</div>
+{% endif %}
 
 {% endblock content %}

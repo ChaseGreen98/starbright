@@ -1,19 +1,15 @@
 {% extends "index.html" %}
 
-{% block title %}Login | Starbright Cafe{% endblock title %}
+{% block title %}Login{% endblock title %}
 
 {% block content %}
 
 <div class="login-page">
-    <div class="login_form_container">
+    {% comment %} <div class="login_form_container"> {% endcomment %}
         <div class="login-panel">
             
             <div class="login-header">
-                <p class="eyebrow">Member access</p>
                 <h1>Welcome back</h1>
-                <p class="login-subtitle">
-                    Sign in to manage your account and access exclusive features.
-                </p>
             </div>
 
             <form method="POST" class="auth-form">
@@ -26,7 +22,7 @@
             </form>
 
         </div>
-    </div>
+    {% comment %} </div> {% endcomment %}
 </div>
 
 {% endblock content %}
