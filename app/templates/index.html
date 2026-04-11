@@ -22,9 +22,9 @@
                     <a href="{% url 'community_view' %}">COMMUNITY</a>
                 </div>
             </div>
-            <div id="shopping-cart-div">
+            <a href="{% url 'menu_view' %}" id="shopping-cart-link">
                 <img id="shopping-cart" src="{% static '/images/shopping-cart.png' %}">
-            </div>
+            </a>
         </div>
         {% block content %}
         {% endblock content%}
