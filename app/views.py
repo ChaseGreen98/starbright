@@ -31,7 +31,7 @@ def login_view(request):
 def menu_view(request):
     items = Menu_Item.objects.all()
 
-    paginator = Paginator(items, 4)
+    paginator = Paginator(items, 10)
     page_obj = paginator.get_page(request.GET.get("page"))
 
     return render(request, "menu.html", {"page_obj": page_obj})
@@ -39,7 +39,7 @@ def menu_view(request):
 def merch_view(request):
     items = Merch_Item.objects.all()
 
-    paginator = Paginator(items, 4)
+    paginator = Paginator(items, 10)
     page_obj = paginator.get_page(request.GET.get("page"))
 
     return render(request, "merch.html", {"page_obj": page_obj})
@@ -48,7 +48,7 @@ def merch_view(request):
 def owner_menu_view(request):
     items = Menu_Item.objects.all()
 
-    paginator = Paginator(items, 4)
+    paginator = Paginator(items, 10)
     page_obj = paginator.get_page(request.GET.get("page"))
 
     return render(request, "owner_menu.html", {"page_obj": page_obj})
@@ -57,7 +57,7 @@ def owner_menu_view(request):
 def owner_merch_view(request):
     items = Merch_Item.objects.all()
 
-    paginator = Paginator(items, 4)
+    paginator = Paginator(items, 10)
     page_obj = paginator.get_page(request.GET.get("page"))
 
     return render(request, "owner_merch.html", {"page_obj": page_obj})
