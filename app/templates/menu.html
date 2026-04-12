@@ -4,33 +4,154 @@
 
 {% block content %}
 
+<div id="menu-section">
+
 <h1>Menu</h1>
 
-{% for item in page_obj %}
-    <div class="menu_item_card">
-        <p>{{ item.name }}</p>
-        <p>{{ item.description }}</p>
-        <p>{{ item.price }}</p>
-        <p>{{ item.image }}</p>
+{% comment %} i wanna maybe add another lil navbar for the menu to jump to a specific category {% endcomment %}
+
+    <h2>Coffee</h2>
+    <div class="category-panel">
+    {% for item in page_obj %}
+        {% if item.category == 'COF' %}
+            <div class="menu-item-card">
+                <p>{{ item.name }}</p>
+                {% if item.image %}
+                <img class="menu-images" src="{{ item.image.url }}">
+                {% else %}
+                <p>No image to display</p>
+                {% endif %}
+                <p>{{ item.description }}</p>
+                <p>${{ item.price }}+</p>
+            </div>
+        {% endif %}
+    {% endfor %}
     </div>
-    {% empty %}
-        <p>None in database</p>
-{% endfor %}
 
-<div class="pagination">
-    {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
-            ← Previous
-        </a>
-    {% endif %}
+    <h2>Frappe</h2>
+    <div class="category-panel">
+    {% for item in page_obj %}
+        {% if item.category == 'FRA' %}
+            <div class="menu-item-card">
+                <p>{{ item.name }}</p>
+                {% if item.image %}
+                <img class="menu-images" src="{{ item.image.url }}">
+                {% else %}
+                <p>No image to display</p>
+                {% endif %}
+                <p>{{ item.description }}</p>
+                <p>${{ item.price }}+</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
 
-    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+    <h2>Starbright Kids</h2>
+    <div class="category-panel">
+    {% for item in page_obj %}
+        {% if item.category == 'KID' %}
+            <div class="menu-item-card">
+                <p>{{ item.name }}</p>
+                {% if item.image %}
+                <img class="menu-images" src="{{ item.image.url }}">
+                {% else %}
+                <p>No image to display</p>
+                {% endif %}
+                <p>{{ item.description }}</p>
+                <p>${{ item.price }}+</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
 
-    {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
-            Next →
-        </a>
-    {% endif %}
+    <h2>Food</h2>
+    <div class="category-panel">
+    {% for item in page_obj %}
+        {% if item.category == 'FOO' %}
+            <div class="menu-item-card">
+                <p>{{ item.name }}</p>
+                {% if item.image %}
+                <img class="menu-images" src="{{ item.image.url }}">
+                {% else %}
+                <p>No image to display</p>
+                {% endif %}
+                <p>{{ item.description }}</p>
+                <p>${{ item.price }}+</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <h2>Starbright Specialty Drinks</h2>
+    <div class="category-panel">
+    {% for item in page_obj %}
+        {% if item.category == 'SPE' %}
+            <div class="menu-item-card">
+                <p>{{ item.name }}</p>
+                {% if item.image %}
+                <img class="menu-images" src="{{ item.image.url }}">
+                {% else %}
+                <p>No image to display</p>
+                {% endif %}
+                <p>{{ item.description }}</p>
+                <p>${{ item.price }}+</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <h2>Lotus plant Power</h2>
+    <div class="category-panel">
+    {% for item in page_obj %}
+        {% if item.category == 'LOT' %}
+            <div class="menu-item-card">
+                <p>{{ item.name }}</p>
+                {% if item.image %}
+                <img class="menu-images" src="{{ item.image.url }}">
+                {% else %}
+                <p>No image to display</p>
+                {% endif %}
+                <p>{{ item.description }}</p>
+                <p>${{ item.price }}+</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <h2>Other</h2>
+    <div class="category-panel">
+    {% for item in page_obj %}
+        {% if item.category == 'OTH' %}
+            <div class="menu-item-card">
+                <p>{{ item.name }}</p>
+                {% if item.image %}
+                <img class="menu-images" src="{{ item.image.url }}">
+                {% else %}
+                <p>No image to display</p>
+                {% endif %}
+                <p>{{ item.description }}</p>
+                <p>${{ item.price }}+</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                ← Previous
+            </a>
+        {% endif %}
+
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Next →
+            </a>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock content %}

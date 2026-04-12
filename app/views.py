@@ -23,15 +23,17 @@ def login_view(request):
         form = CustomAuthenticationForm(request, data=request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect("owner_portal")
+            return redirect("owner_portal_view")
     else:
         form = CustomAuthenticationForm()
     return render(request, "login.html", {"form": form})
 
 def menu_view(request):
+    # ^^ i might want to change this to work with the new category field i've added to the model, or something idk
     items = Menu_Item.objects.all()
 
-    paginator = Paginator(items, 10)
+    paginator = Paginator(items, 99)
+    # TEMPORARY CHANGE PLEASE CHANGE IT BACK TO 10 BEFORE YOU PUSH MEGAN OH MY GOD
     page_obj = paginator.get_page(request.GET.get("page"))
 
     return render(request, "menu.html", {"page_obj": page_obj})
@@ -69,7 +71,7 @@ def owner_merch_view(request):
 @login_required
 def menu_create_form_view(request):
     if request.method == "POST":
-        form = MenuForm(request.POST)
+        form = MenuForm(request.POST, request.FILES)
         if form.is_valid():
             menu_item = form.save(commit=False)
             menu_item.save()
@@ -83,7 +85,7 @@ def menu_update_form_view(request, id):
     menu_item = get_object_or_404(Menu_Item, id=id)
 
     if request.method == "POST":
-        form = MenuForm(request.POST, instance=menu_item)
+        form = MenuForm(request.POST, request.FILES, instance=menu_item)
         if form.is_valid():
             form.save()
             return redirect("owner_portal_view")
@@ -95,7 +97,7 @@ def menu_update_form_view(request, id):
 @login_required
 def merch_create_form_view(request):
     if request.method == "POST":
-        form = MerchForm(request.POST)
+        form = MerchForm(request.POST, request.FILES)
         if form.is_valid():
             merch_item = form.save(commit=False)
             merch_item.save()
@@ -109,7 +111,7 @@ def merch_update_form_view(request, id):
     merch_item = get_object_or_404(Merch_Item, id=id)
 
     if request.method == "POST":
-        form = MerchForm(request.POST, instance=merch_item)
+        form = MerchForm(request.POST, request.FILES, instance=merch_item)
         if form.is_valid():
             form.save()
             return redirect("owner_portal_view")

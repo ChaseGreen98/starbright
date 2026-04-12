@@ -19,6 +19,7 @@ h1 {
 }
 
 h2 {
+    text-transform: uppercase;
     font-family: Doulossil;
     font-weight: 250;
     color: rgb(30, 30, 30);
@@ -142,6 +143,30 @@ body {
     margin: 0;
     width: 100%;
     margin-top: -50px;
+}
+
+/* OWNER PORTAL */
+
+#owner-portal-actions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 5px solid rgb(30, 30, 30);
+    border-radius: 10px;
+}
+
+.owner-action-panel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    border: 5px solid rgb(30, 30, 30);
+    border-radius: 10px;
 }
 
 /* BEHIND THE COUNTER */
@@ -420,4 +445,45 @@ body {
     .community-btn {
         width: 100%;
     }
+}
+
+/* MENU */
+
+#menu-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+    padding: 20px;
+    border: 5px solid rgb(30, 30, 30);
+    border-radius: 10px;
+}
+
+.menu-item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20vw;
+    padding: 10px;
+    margin: 5px;
+    border: 5px solid rgb(30, 30, 30);
+    border-radius: 10px;
+}
+
+.menu-item-card p {
+    margin: 0;
+}
+
+.menu-images {
+    width: 15vw;
 }
