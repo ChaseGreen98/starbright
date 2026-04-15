@@ -37,6 +37,7 @@ body {
 /* NAVBAR */
 
 #navbar {
+    z-index: 2;
     display: flex;
     position: sticky;
     top: 0px;
@@ -115,7 +116,8 @@ body {
     background-image: url(/app/static/images/gradient-glitter.png);
     background-repeat: repeat-x;
     background-position: top;
-    background-size:auto;
+    background-size: cover;
+    position: relative;
 }
 
 #home-title-1 {
@@ -140,9 +142,20 @@ body {
 }
 
 #divider {
+    height: 150px;
+    bottom: 75px;
+    position: absolute;
+    z-index: 1;
     margin: 0;
     width: 100%;
-    margin-top: -50px;
+}
+
+#previews-section {
+    background-image: linear-gradient(to left, rgba(30, 30, 30, 0), rgba(30, 30, 30, 50%), rgba(30, 30, 30, 90%), rgba(30, 30, 30, 100%)), url(/app/static/images/generated-espresso-machine.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    height: 100vh;
 }
 
 /* OWNER PORTAL */

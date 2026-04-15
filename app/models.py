@@ -13,7 +13,7 @@ class Menu_Item(models.Model):
 
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=3, choices=Category.choices, default=Category.COFFEE)
-    description = models.TextField()
+    description = models.TextField(default="No description available for this item.")
     price = models.DecimalField(decimal_places=2, max_digits=10)
     is_featured = models.BooleanField(default=False)
     image = models.ImageField()
