@@ -32,7 +32,7 @@ def menu_view(request):
     # ^^ i might want to change this to work with the new category field i've added to the model, or something idk
     items = Menu_Item.objects.all()
 
-    paginator = Paginator(items, 99)
+    paginator = Paginator(items, 10)
     # TEMPORARY CHANGE PLEASE CHANGE IT BACK TO 10 BEFORE YOU PUSH MEGAN OH MY GOD
     page_obj = paginator.get_page(request.GET.get("page"))
 
