@@ -30,13 +30,41 @@ def login_view(request):
 
 def menu_view(request):
     # ^^ i might want to change this to work with the new category field i've added to the model, or something idk
-    items = Menu_Item.objects.all()
+    cof_items = Menu_Item.objects.filter(category='COF')
+    fra_items = Menu_Item.objects.filter(category='FRA')
+    kid_items = Menu_Item.objects.filter(category='KID')
+    foo_items = Menu_Item.objects.filter(category='FOO')
+    spe_items = Menu_Item.objects.filter(category='SPE')
+    lot_items = Menu_Item.objects.filter(category='LOT')
+    oth_items = Menu_Item.objects.filter(category='OTH')
 
-    paginator = Paginator(items, 10)
+    cof_paginator = Paginator(cof_items, 10)
+    fra_paginator = Paginator(fra_items, 10)
+    kid_paginator = Paginator(kid_items, 10)
+    foo_paginator = Paginator(foo_items, 10)
+    spe_paginator = Paginator(spe_items, 10)
+    lot_paginator = Paginator(lot_items, 10)
+    oth_paginator = Paginator(oth_items, 10)
     # TEMPORARY CHANGE PLEASE CHANGE IT BACK TO 10 BEFORE YOU PUSH MEGAN OH MY GOD
-    page_obj = paginator.get_page(request.GET.get("page"))
+    cof_page_obj = cof_paginator.get_page(request.GET.get("page"))
+    fra_page_obj = fra_paginator.get_page(request.GET.get("page"))
+    kid_page_obj = kid_paginator.get_page(request.GET.get("page"))
+    foo_page_obj = foo_paginator.get_page(request.GET.get("page"))
+    spe_page_obj = spe_paginator.get_page(request.GET.get("page"))
+    lot_page_obj = lot_paginator.get_page(request.GET.get("page"))
+    oth_page_obj = oth_paginator.get_page(request.GET.get("page"))
 
-    return render(request, "menu.html", {"page_obj": page_obj})
+    context = {
+        "cof_page_obj": cof_page_obj,
+        "fra_page_obj": fra_page_obj,
+        "kid_page_obj": kid_page_obj,
+        "foo_page_obj": foo_page_obj,
+        "spe_page_obj": spe_page_obj,
+        "lot_page_obj": lot_page_obj,
+        "oth_page_obj": oth_page_obj,
+    }
+
+    return render(request, "menu.html", context)
 
 def merch_view(request):
     items = Merch_Item.objects.all()
