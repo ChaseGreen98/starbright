@@ -12,142 +12,176 @@
 
     <h2>Coffee</h2>
     <div class="category-panel">
-    {% for item in page_obj %}
-        {% if item.category == 'COF' %}
-            <div class="menu-item-card">
-                <p>{{ item.name }}</p>
-                {% if item.image %}
-                <img class="menu-images" src="{{ item.image.url }}">
-                {% else %}
-                <p>No image to display</p>
-                {% endif %}
-                <p>{{ item.description }}</p>
-                <p>${{ item.price }}+</p>
-            </div>
-        {% endif %}
+    {% for item in cof_page_obj %}
+        {{ item.name }}
+        {{ item.description }}
+        {{ item.price }}
+        {{ item.image }}
     {% endfor %}
     </div>
-
-    <h2>Frappe</h2>
-    <div class="category-panel">
-    {% for item in page_obj %}
-        {% if item.category == 'FRA' %}
-            <div class="menu-item-card">
-                <p>{{ item.name }}</p>
-                {% if item.image %}
-                <img class="menu-images" src="{{ item.image.url }}">
-                {% else %}
-                <p>No image to display</p>
-                {% endif %}
-                <p>{{ item.description }}</p>
-                <p>${{ item.price }}+</p>
-            </div>
-        {% endif %}
-    {% endfor %}
-    </div>
-
-    <h2>Starbright Kids</h2>
-    <div class="category-panel">
-    {% for item in page_obj %}
-        {% if item.category == 'KID' %}
-            <div class="menu-item-card">
-                <p>{{ item.name }}</p>
-                {% if item.image %}
-                <img class="menu-images" src="{{ item.image.url }}">
-                {% else %}
-                <p>No image to display</p>
-                {% endif %}
-                <p>{{ item.description }}</p>
-                <p>${{ item.price }}+</p>
-            </div>
-        {% endif %}
-    {% endfor %}
-    </div>
-
-    <h2>Food</h2>
-    <div class="category-panel">
-    {% for item in page_obj %}
-        {% if item.category == 'FOO' %}
-            <div class="menu-item-card">
-                <p>{{ item.name }}</p>
-                {% if item.image %}
-                <img class="menu-images" src="{{ item.image.url }}">
-                {% else %}
-                <p>No image to display</p>
-                {% endif %}
-                <p>{{ item.description }}</p>
-                <p>${{ item.price }}+</p>
-            </div>
-        {% endif %}
-    {% endfor %}
-    </div>
-
-    <h2>Starbright Specialty Drinks</h2>
-    <div class="category-panel">
-    {% for item in page_obj %}
-        {% if item.category == 'SPE' %}
-            <div class="menu-item-card">
-                <p>{{ item.name }}</p>
-                {% if item.image %}
-                <img class="menu-images" src="{{ item.image.url }}">
-                {% else %}
-                <p>No image to display</p>
-                {% endif %}
-                <p>{{ item.description }}</p>
-                <p>${{ item.price }}+</p>
-            </div>
-        {% endif %}
-    {% endfor %}
-    </div>
-
-    <h2>Lotus plant Power</h2>
-    <div class="category-panel">
-    {% for item in page_obj %}
-        {% if item.category == 'LOT' %}
-            <div class="menu-item-card">
-                <p>{{ item.name }}</p>
-                {% if item.image %}
-                <img class="menu-images" src="{{ item.image.url }}">
-                {% else %}
-                <p>No image to display</p>
-                {% endif %}
-                <p>{{ item.description }}</p>
-                <p>${{ item.price }}+</p>
-            </div>
-        {% endif %}
-    {% endfor %}
-    </div>
-
-    <h2>Other</h2>
-    <div class="category-panel">
-    {% for item in page_obj %}
-        {% if item.category == 'OTH' %}
-            <div class="menu-item-card">
-                <p>{{ item.name }}</p>
-                {% if item.image %}
-                <img class="menu-images" src="{{ item.image.url }}">
-                {% else %}
-                <p>No image to display</p>
-                {% endif %}
-                <p>{{ item.description }}</p>
-                <p>${{ item.price }}+</p>
-            </div>
-        {% endif %}
-    {% endfor %}
-    </div>
-
-
-    <div class="pagination">
-        {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+    <div class="coffee-pagination">
+        {% if cof_page_obj.has_previous %}
+            <a href="?page={{ cof_page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
                 ← Previous
             </a>
         {% endif %}
 
-        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        <span>Page {{ cof_page_obj.number }} of {{ cof_page_obj.paginator.num_pages }}</span>
 
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+        {% if cof_page_obj.has_next %}
+            <a href="?page={{ cof_page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Next →
+            </a>
+        {% endif %}
+    </div>
+
+    <h2>Frappe</h2>
+    <div class="category-panel">
+    {% for item in fra_page_obj %}
+        {{ item.name }}
+        {{ item.description }}
+        {{ item.price }}
+        {{ item.image }}
+    {% endfor %}
+    </div>
+    <div class="frappe-pagination">
+        {% if fra_page_obj.has_previous %}
+            <a href="?page={{ fra_page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                ← Previous
+            </a>
+        {% endif %}
+
+        <span>Page {{ fra_page_obj.number }} of {{ fra_page_obj.paginator.num_pages }}</span>
+
+        {% if fra_page_obj.has_next %}
+            <a href="?page={{ fra_page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Next →
+            </a>
+        {% endif %}
+    </div>
+
+    <h2>Starbright Kids</h2>
+    <div class="category-panel">
+    {% for item in kid_page_obj %}
+        {{ item.name }}
+        {{ item.description }}
+        {{ item.price }}
+        {{ item.image }}
+    {% endfor %}
+    </div>
+    <div class="kid-pagination">
+        {% if kid_page_obj.has_previous %}
+            <a href="?page={{ kid_page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                ← Previous
+            </a>
+        {% endif %}
+
+        <span>Page {{ kid_page_obj.number }} of {{ kid_page_obj.paginator.num_pages }}</span>
+
+        {% if kid_page_obj.has_next %}
+            <a href="?page={{ kid_page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Next →
+            </a>
+        {% endif %}
+    </div>
+
+    <h2>Food</h2>
+    <div class="category-panel">
+    {% for item in foo_page_obj %}
+        {{ item.name }}
+        {{ item.description }}
+        {{ item.price }}
+        {{ item.image }}
+    {% endfor %}
+    </div>
+    <div class="food-pagination">
+        {% if foo_page_obj.has_previous %}
+            <a href="?page={{ foo_page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                ← Previous
+            </a>
+        {% endif %}
+
+        <span>Page {{ foo_page_obj.number }} of {{ foo_page_obj.paginator.num_pages }}</span>
+
+        {% if foo_page_obj.has_next %}
+            <a href="?page={{ foo_page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Next →
+            </a>
+        {% endif %}
+    </div>
+
+    <h2>Starbright Specialty Drinks</h2>
+    <div class="category-panel">
+    {% for item in spe_page_obj %}
+        {{ item.name }}
+        {{ item.description }}
+        {{ item.price }}
+        {{ item.image }}
+    {% endfor %}
+    </div>
+    <div class="special-pagination">
+        {% if spe_page_obj.has_previous %}
+            <a href="?page={{ spe_page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                ← Previous
+            </a>
+        {% endif %}
+
+        <span>Page {{ spe_page_obj.number }} of {{ spe_page_obj.paginator.num_pages }}</span>
+
+        {% if spe_page_obj.has_next %}
+            <a href="?page={{ spe_page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Next →
+            </a>
+        {% endif %}
+    </div>
+
+    <h2>Lotus plant Power</h2>
+    <div class="category-panel">
+    {% for item in lot_page_obj %}
+        {{ item.name }}
+        {{ item.description }}
+        {{ item.price }}
+        {{ item.image }}
+    {% endfor %}
+    </div>
+    <div class="lotus-pagination">
+        {% if lot_page_obj.has_previous %}
+            <a href="?page={{ lot_page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                ← Previous
+            </a>
+        {% endif %}
+
+        <span>Page {{ lot_page_obj.number }} of {{ lot_page_obj.paginator.num_pages }}</span>
+
+        {% if lot_page_obj.has_next %}
+            <a href="?page={{ lot_page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Next →
+            </a>
+        {% endif %}
+    </div>
+
+    <h2>Other</h2>
+    <div class="category-panel">
+    {% for item in oth_page_obj %}
+        {{ item.name }}
+        {{ item.description }}
+        {{ item.price }}
+        {{ item.image }}
+    {% endfor %}
+    </div>
+
+
+    <div class="other-pagination">
+        {% if oth_page_obj.has_previous %}
+            <a href="?page={{ oth_page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                ← Previous
+            </a>
+        {% endif %}
+
+        <span>Page {{ oth_page_obj.number }} of {{ oth_page_obj.paginator.num_pages }}</span>
+
+        {% if oth_page_obj.has_next %}
+            <a href="?page={{ oth_page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
                 Next →
             </a>
         {% endif %}
