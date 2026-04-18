@@ -14,23 +14,14 @@
     <main>
         <div id="navbar">
             <div id="nav-items">
-                <a id="logo-anchor" href="{% url 'home' %}">
-                    <img id="logo" src="{% static '/images/logo.jpg' %}">
-                </a>
-                <a class="nav-links" href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
-                <a class="nav-links" href="{% url 'community_view' %}">COMMUNITY</a>
-                <a class="nav-links" href="{% url 'merch_view' %}">MERCH</a>
-                <div id="dropdown-menu">
-                    <a class="nav-links" id="menu-button" href="{% url 'menu_view' %}">MENU</a>
-                    <div id="menu-dropdown-content">
-                        <a href="{% url 'coffee_view' %}">COFFEE</a>
-                        <a href="{% url 'frappe_view' %}">FRAPPE</a>
-                        <a href="{% url 'kids_view' %}">KIDS</a>
-                        <a href="{% url 'food_view' %}">FOOD</a>
-                        <a href="{% url 'specialty_view' %}">SPECIALTY</a>
-                        <a href="{% url 'lotus_view' %}">LOTUS</a>
-                        <a href="{% url 'other_view' %}">OTHER</a>
-                    </div>
+                <div id="always-visible-nav">
+                    <a id="logo-anchor" href="{% url 'home' %}">
+                        <img id="logo" src="{% static '/images/logo.jpg' %}">
+                    </a>
+                </div>
+                <div id="mobile-hidden-nav">
+                    <a class="nav-links" href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
+                    <a class="nav-links" href="{% url 'community_view' %}">COMMUNITY</a>
                 </div>
             </div>
             <a target=blank href="https://order.dripos.com/Starbright-Cafe" id="shopping-cart-link">

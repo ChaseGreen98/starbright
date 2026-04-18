@@ -45,21 +45,6 @@ class UserUpdateForm(ModelForm):
         )
 
 
-class MenuForm(forms.ModelForm):
-
-    class Meta:
-        model = Menu_Item
-        fields = (
-            'name',
-            'category',
-            'description',
-            'price',
-            'is_featured',
-            'image',
-        )
-
-    image = forms.ImageField(required=False)
-    description = forms.CharField(widget=forms.Textarea, required=False)
 
 class NewsForm(ModelForm):
 
@@ -72,16 +57,3 @@ class NewsForm(ModelForm):
             'para_three',
         )
 
-class MerchForm(ModelForm):
-
-    class Meta:
-        model = Merch_Item
-        fields = (
-            'name', 
-            'description',
-            'price',
-            'is_featured',
-            'image',
-        )
-
-    image = forms.ImageField(required=False)
