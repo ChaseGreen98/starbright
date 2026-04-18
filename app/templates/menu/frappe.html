@@ -1,0 +1,38 @@
+{% extends "menu/menu.html" %}
+
+{% block title %}Frappe{% endblock %}
+
+{% block menu %}
+
+<h2>Frappe</h2>
+<div class="category-panel">
+{% for item in fra_page_obj %}
+    <div class="menu-item-card">
+        <p>{{ item.name }}</p>
+        {% if item.image %}
+        <img class="menu-images" src="{{ item.image.url }}">
+        {% else %}
+        <p>No image to display</p>
+        {% endif %}
+        <p>{{ item.description }}</p>
+        <p>${{ item.price }}+</p>
+    </div>
+{% endfor %}
+</div>
+<div class="frappe-pagination">
+    {% if fra_page_obj.has_previous %}
+        <a href="?page={{ fra_page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+            ← Previous
+        </a>
+    {% endif %}
+
+    <span>Page {{ fra_page_obj.number }} of {{ fra_page_obj.paginator.num_pages }}</span>
+
+    {% if fra_page_obj.has_next %}
+        <a href="?page={{ fra_page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+            Next →
+        </a>
+    {% endif %}
+</div>
+
+{% endblock menu %}
