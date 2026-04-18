@@ -6,6 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}Starbright Cafe{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 
@@ -19,15 +20,17 @@
                 <a class="nav-links" href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
                 <a class="nav-links" href="{% url 'community_view' %}">COMMUNITY</a>
                 <a class="nav-links" href="{% url 'merch_view' %}">MERCH</a>
-                <a id="menu-button" href="{% url 'menu_view' %}">MENU</a>
-                <div id="menu-nav-links">
-                    <a href="{% url 'coffee_view' %}">COFFEE</a>
-                    <a href="{% url 'frappe_view' %}">FRAPPE</a>
-                    <a href="{% url 'kids_view' %}">KIDS</a>
-                    <a href="{% url 'food_view' %}">FOOD</a>
-                    <a href="{% url 'specialty_view' %}">SPECIALTY</a>
-                    <a href="{% url 'lotus_view' %}">LOTUS</a>
-                    <a href="{% url 'other_view' %}">OTHER</a>
+                <div id="dropdown-menu">
+                    <a class="nav-links" id="menu-button" href="{% url 'menu_view' %}">MENU</a>
+                    <div id="menu-dropdown-content">
+                        <a href="{% url 'coffee_view' %}">COFFEE</a>
+                        <a href="{% url 'frappe_view' %}">FRAPPE</a>
+                        <a href="{% url 'kids_view' %}">KIDS</a>
+                        <a href="{% url 'food_view' %}">FOOD</a>
+                        <a href="{% url 'specialty_view' %}">SPECIALTY</a>
+                        <a href="{% url 'lotus_view' %}">LOTUS</a>
+                        <a href="{% url 'other_view' %}">OTHER</a>
+                    </div>
                 </div>
             </div>
             <a target=blank href="https://order.dripos.com/Starbright-Cafe" id="shopping-cart-link">

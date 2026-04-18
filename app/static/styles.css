@@ -56,26 +56,42 @@ body {
     margin: 0;
 }
 
-.nav-links, #menu-button {
+.nav-links {
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     font-family: Doulossil;
     font-size: 20px;
-    min-width: 150px;
     height: 100px;
+    padding: 0 20px;
 }
 
-.nav-links:hover, #menu-button:hover {
+.nav-links:hover, #dropdown-menu:hover #menu-button {
     background: linear-gradient(to right, white, #ff92ba, white);
 }
 
-/* #menu-nav-links {
-    
-} */
+#menu-dropdown-content {
+    background-color: white;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+}
 
+#menu-dropdown-content a {
+    text-decoration: none;
+    padding: 0 5px;
+}
 
+#menu-dropdown-content a:hover {
+    background: linear-gradient(to right, white, #ff92ba, white);
+}
+
+#dropdown-menu:hover #menu-dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
 
 #logo-anchor {
     display: flex;
@@ -84,7 +100,7 @@ body {
 
 #logo {
     padding: 10px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 
 #shopping-cart-link {
@@ -448,24 +464,6 @@ body {
     opacity: 0.98;
 }
 
-@media (max-width: 720px) {
-    .community-section {
-        padding: 60px 16px;
-    }
-
-    .community-title {
-        font-size: 2.3rem;
-    }
-
-    .community-intro {
-        margin-bottom: 40px;
-    }
-
-    .community-btn {
-        width: 100%;
-    }
-}
-
 /* MENU */
 
 #menu-section {
@@ -473,7 +471,9 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    justify-self: center;
     align-items: center;
+    width: 100%;
 }
 
 #menu-navbar {
@@ -484,9 +484,19 @@ body {
     align-items: center;
     justify-self: center;
     margin: 0;
-    height: 75px;
     justify-content: space-between;
-    background-color: white;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+    border-bottom: 2px solid #c9a227;
+    border-radius: 0 0 10px 10px;
+}
+
+.menu-links {
+    text-decoration: none;
+    padding: 15px 10px 10px;
+}
+
+.menu-links:hover {
+    background: linear-gradient(to right, transparent, #ff92ba, transparent);
 }
 
 .category-panel {
@@ -518,4 +528,10 @@ body {
 
 .menu-images {
     width: 15vw;
+}
+
+/* MOBILE STYLING */
+
+@media screen and (max-width: 768px) {
+    
 }
