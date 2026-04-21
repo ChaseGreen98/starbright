@@ -11,6 +11,8 @@ urlpatterns = [
     path("community/", community_view, name="community_view"),
     path("login/", login_view, name="login_view" ),
     path("owner-portal/", owner_portal_view, name="owner_portal_view"),
+    path("owner-portal/create-post/", news_create_form_view, name="create_post_view"),
+    path("owner-portal/update-post/", news_update_form_view, name="update_post_view"),
 ]
 
 if settings.DEBUG:

@@ -19,9 +19,16 @@
                         <img id="logo" src="{% static '/images/logo.jpg' %}">
                     </a>
                 </div>
-                <div id="mobile-hidden-nav">
-                    <a class="nav-links" href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
-                    <a class="nav-links" href="{% url 'community_view' %}">COMMUNITY</a>
+                <div id="mobile-hamburger">
+                    <div class="hamburger hamburger--arrow js-hamburger">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
+                    </div>
+                    <div id="mobile-hidden-nav">
+                        <a class="nav-links" href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
+                        <a class="nav-links" href="{% url 'community_view' %}">COMMUNITY</a>
+                    </div>
                 </div>
             </div>
             <a target=blank href="https://order.dripos.com/Starbright-Cafe" id="shopping-cart-link">
@@ -33,9 +40,60 @@
         {% endblock content%}
 
         <div id="contact-section">
-            <h1 id="contact-title">Contact us</h1>
+            <div id="column-1">
+                <h1 id="contact-title">Contact us</h1>
+                <p class="address">9 Front Street Suite A</p>
+                <p class="address">Coffeeville, MS 38922</p>
+                <a id="phone" href="tel:+16627092206">(662) 709-2206</a>
+                <a id="email" href="mailto:starbrightcafems@gmail.com">starbrightcafems@gmail.com</a>
+                <div id="socials">
+                    <a id="facebook" href="https://www.facebook.com/people/Starbright-Cafe/61584437474116/">
+                        <img src="{% static '/images/facebook.png' %}">
+                    </a>
+                    <a id="instagram" href="https://www.instagram.com/starbrightcafems/">
+                        <img src="{% static '/images/instagram.png' %}">
+                    </a>
+                    <a id="tiktok" href="https://www.tiktok.com/@starbright.cafe">
+                        <img src="{% static '/images/tiktok.png' %}">
+                    </a>
+                </div>
+            </div>
+            <div id="column-2">
+                <h1 id="hours-title">Store Hours</h1>
+                <div id="hours-info">
+                    <div id="store-days">
+                        <p>Sunday</p>
+                        <p>Monday</p>
+                        <p>Tuesday</p>
+                        <p>Wednesday</p>
+                        <p>Thursday</p>
+                        <p>Friday</p>
+                        <p>Saturday</p>
+                    </div>
+                    <div id="store-hours">
+                        <p>Closed</p>
+                        <p>Closed</p>
+                        <p>6:30 AM - 12:00 PM</p>
+                        <p>6:30 AM - 2:00 PM</p>
+                        <p>6:15 AM - 12:00 PM</p>
+                        <p>6:00 AM - 2:00 PM</p>
+                        <p>8:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+    <script>
+        // Look for .hamburger
+        var hamburger = document.querySelector(".hamburger");
+        // On click
+        hamburger.addEventListener("click", function() {
+            // Toggle class "is-active"
+            hamburger.classList.toggle("is-active");
+            // Do something else, like open/close menu
+        });
+    </script>
 </body>
 
 </html>
+

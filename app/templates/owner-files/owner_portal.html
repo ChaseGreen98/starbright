@@ -8,19 +8,9 @@
     <h1>Welcome to the Owner Portal!</h1>
     <p>this is where the magic happens</p>
     <div class="owner-action-panel">
-        <h1>Menu</h1>
-        <a class="owner-action" href="{% url 'menu_form' %}">create a new menu item</a>
-        {% comment %} <a class="owner-action" href="{% url 'menu_update' %}">update an existing menu item</a> {% endcomment %}
-    </div>
-    <div class="owner-action-panel">
-        <h1>Merch</h1>
-        <a class="owner-action" href="{% url 'merch_form' %}">create a new merch item</a>
-        {% comment %} <a class="owner-action" href="{% url 'merch_update' %}">update an existing merch item</a> {% endcomment %}
-    </div>
-    <div class="owner-action-panel">
         <h1>Newsletter</h1>
-        <a class="owner-action">create a new newsletter post</a>
-        <a class="owner-action">update an existing newsletter post</a>
+        <a class="owner-action" href="{% url 'create_post_view' %}">create a new newsletter post</a>
+        <a class="owner-action" href="{% url 'update_post_view' %}">update an existing newsletter post</a>
     </div>
 
 </div>
