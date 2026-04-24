@@ -113,8 +113,10 @@ body {
 #contact-section {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    gap: 50px;
     margin: 0;
-    padding: 20px;
+    padding: 20px 0;
     background-color: rgb(30, 30, 30);
     width: 100%;
 }
@@ -127,15 +129,25 @@ body {
     margin: 0;
 }
 
-#column-1 {
+#column-1, #column-2 {
     display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    justify-content: left;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 #column-1 a {
     text-decoration: none;
+}
+
+#contact-section-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+#socials {
+    margin-top: 5px;
 }
 
 #socials a {
@@ -147,11 +159,17 @@ body {
     filter: invert();
 }
 
-#column-2 {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    justify-content: center;
+#contact-divider {
+    justify-self: center;
+    align-self: center;
+    background-color: white;
+    display: inline;
+    width: 1px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    border: 0px transparent;
+    border-radius: 50px;
 }
 
 #hours-title {
@@ -426,6 +444,10 @@ body {
     align-items: center;
 }
 
+.community-section p {
+    text-align: center;
+}
+
 .community-cards {
     display: none;
 }
@@ -454,74 +476,11 @@ body {
 
 @media screen and (max-width: 768px) {
 
+    /* NAVBAR */
+
     #mobile-hidden-nav {
         display: none;
     }
-
-
-
-    /* #navbar {
-        z-index: 2;
-        display: flex;
-        position: sticky;
-        top: 0px;
-        align-items: center;
-        margin: 0;
-        height: 100px;
-        justify-content: space-between;
-        background-color: white;
-        box-shadow: 0px 0px 25px rgba(30, 30, 30, .25);
-    }
-
-    #nav-items {
-        align-self: center;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        margin: 0;
-    }
-
-    #always-visible-nav {
-        display: flex;
-    }
-
-    #mobile-hidden-nav {
-        display: flex;
-    }
-
-    .nav-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        font-family: Doulossil;
-        font-size: 20px;
-        height: 100px;
-        padding: 0 15px;
-    }
-
-    .nav-links:hover {
-        background: linear-gradient(to right, white, #ff92ba, white);
-    }
-
-    #logo-anchor {
-        display: flex;
-        height: 100px;
-    }
-
-    #logo {
-        padding: 10px;
-        margin-right: 5px;
-    }
-
-    #shopping-cart-link {
-        justify-self: flex-end;
-        padding: 10px;
-    }
-
-    #shopping-cart {
-        max-height: 50px;
-    } */
 
     #navbar {
         justify-content: center;
@@ -613,10 +572,33 @@ body {
         transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
     }
 
+    #mobile-hidden-nav.is-active {
+        display: flex;
+        text-align: right;
+        position: absolute;
+        flex-direction: column;
+        background-color: white;
+        width: 150px;
+        top: 100px;
+        border-left: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-bottom-left-radius: 10px;
+        background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to bottom left, white, white, #c9a227) border-box;
+    }
+
+    #mobile-hidden-nav.is-active a {
+        font-size: 10;
+    }
+
+    #mobile-hidden-nav.is-active .nav-links:hover {
+        background: linear-gradient(to right, white, #ff92ba, white);
+    }
+
     #shopping-cart-link {
         display: none;
     }
 
+    /* HOME (LANDING) */
 
     #intro-section {
         height: 50vh;
@@ -632,21 +614,26 @@ body {
     }
 
     #contact-section {
-        margin-top: -1px;
+        margin: -1px 0;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        width: 100%;
-        padding: 20px 0;
+        gap: 0;
     }
 
     #column-1, #column-2 {
+        flex-direction: column;
         margin: 0;
+        gap: 0;
     }
 
     #column-1 {
         text-align: center;
-        margin-bottom: 20px;
+    }
+
+    #contact-divider {
+        width: 40vw;
+        height: 1px;
+        margin: 20px;
     }
 
 }
