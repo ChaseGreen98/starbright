@@ -3,26 +3,22 @@
 {% block title %}Login{% endblock title %}
 
 {% block content %}
-
 <div class="login-page">
-    {% comment %} <div class="login_form_container"> {% endcomment %}
-        <div class="login-panel">
-            
-            <div class="login-header">
-                <h1>Welcome back</h1>
-            </div>
-
-            <form method="POST" class="auth-form">
-                {% csrf_token %}
-                {{ form.as_p }}
-
-                <div class="auth-actions">
-                    <button type="submit">Login</button>
-                </div>
-            </form>
-
+    <div class="login-panel">
+        <div class="login-header">
+            <p class="login-kicker">Starbright Cafe</p>
+            <h1>Welcome Back</h1>
+            <p class="login-subtitle">Sign in and step back into your favorite little corner of Coffeeville.</p>
         </div>
-    {% comment %} </div> {% endcomment %}
-</div>
 
+        <form method="POST" class="auth-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <div class="auth-actions">
+                <button type="submit">Enter The Cafe</button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock content %}
