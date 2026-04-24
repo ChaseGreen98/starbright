@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpRequest
 from django.contrib.auth import login, update_session_auth_hash, logout, get_user_model
 from app.models import *
+from django.contrib.admin.views.decorators import staff_member_required
 
 User = get_user_model()
 
@@ -31,15 +32,42 @@ def login_view(request):
         form = CustomAuthenticationForm(request, data=request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect("owner_portal_view")
+            return redirect("home")
     else:
         form = CustomAuthenticationForm()
     return render(request, "login.html", {"form": form})
 
+def sign_up_view(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = CustomUserCreationForm()
+    return render(request, "sign_up.html", {"form": form})
+
+@login_required
+def create_review_view(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.poster = request.user
+            post.save()
+            return redirect('home')
+    else:
+        form = ReviewForm()
+    
+    return render(request, 'create_review.html', {'form': form})
+
+@staff_member_required
 @login_required
 def owner_portal_view(request):
     return render(request, "owner-files/owner_portal.html")
 
+@staff_member_required
 @login_required
 def news_create_form_view(request):
     if request.method == "POST":
@@ -52,6 +80,7 @@ def news_create_form_view(request):
         form = NewsForm()
     return render(request, "forms/news_form.html", {"form": form})
 
+@staff_member_required
 @login_required
 def news_update_form_view(request, id):
     news_item = get_object_or_404(Newsletter, id=id)
