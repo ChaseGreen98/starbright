@@ -28,6 +28,13 @@
                     <div id="mobile-hidden-nav">
                         <a class="nav-links" href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
                         <a class="nav-links" href="{% url 'community_view' %}">COMMUNITY</a>
+                        {% if user.is_superuser %}
+                        <a class="nav-links" href="{% url 'owner_portal' %}">OWNER PORTAL</a>
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button class="nav-links" type="submit">Log Out</button>
+                        </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>

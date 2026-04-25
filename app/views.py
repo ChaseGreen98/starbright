@@ -32,10 +32,14 @@ def login_view(request):
         form = CustomAuthenticationForm(request, data=request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect("home")
+            return redirect("owner_portal")
     else:
         form = CustomAuthenticationForm()
     return render(request, "login.html", {"form": form})
+
+def logout_view(request):
+    logout(request)
+    return redirect("home")
 
 def sign_up_view(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":

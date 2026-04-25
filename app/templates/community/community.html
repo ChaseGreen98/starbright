@@ -6,30 +6,33 @@
 
 <div class="community-section">
 
-    <h1 class="community-title">Community & Impact</h1>
-
-    <p class="community-intro">
-        Giving back isn't an afterthought. It's part of who we are.
-        Every connection we build extends beyond our doors and into the community we serve.
-    </p>
+    <section class="community-hero">
+        <p class="community-kicker">Starbright Cafe</p>
+        <h1 class="community-title">Community & Impact</h1>
+        <p class="community-intro">
+            Giving back is part of the experience here. Every cup, conversation, and gathering
+            is rooted in care for the people we serve.
+        </p>
+    </section>
 
     <div class="community-cards">
-        <div class="card">
+        <div class="community-card">
             <h2>Outreach</h2>
             <p>Supporting local initiatives and uplifting voices through meaningful partnerships.</p>
         </div>
-        <div class="card">
+        <div class="community-card">
             <h2>Events</h2>
             <p>Hosting curated experiences that bring people together with purpose and intention.</p>
         </div>
-        <div class="card">
+        <div class="community-card">
             <h2>Impact</h2>
             <p>Creating lasting change through consistency, care, and community-driven efforts.</p>
         </div>
     </div>
 
     <div id="newsletter-section">
-        <h1>the latest from the owner:</h1>
+        <p class="community-kicker">From the Owner</p>
+        <h1>The Latest Note</h1>
         {% if newsletter %}
         <div class="newsletter-card">
             <h2>{{ newsletter.title }}</h2>
@@ -45,9 +48,7 @@
     </div>
 
     <div class="community-quote">
-        <p>
-            "True success is measured by the lives we touch and the community we uplift."
-        </p>
+        <p>True success is measured by the lives we touch and the community we uplift.</p>
     </div>
 
 </div>
