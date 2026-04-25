@@ -19,7 +19,7 @@ CSRF_COOKIE_SECURE = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://starbright.onrender.com', 'starbright.com', 'www.starbright.com']
+ALLOWED_HOSTS = ['starbright.onrender.com', 'starbright.com', 'www.starbright.com']
 
 
 # Application definition
