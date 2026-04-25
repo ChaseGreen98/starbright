@@ -2,11 +2,19 @@
 {% block content %}
 
 <div class="news_form_container">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+    <section class="newsletter-form-hero">
+        <p class="newsletter-form-kicker">Owner Portal</p>
+        <h1>Create Newsletter</h1>
+        <p>Write the latest note for the Starbright community.</p>
+    </section>
+
+    <div class="newsletter-form-panel">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </div>
 
 {% endblock content %}
