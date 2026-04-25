@@ -10,7 +10,7 @@ class Newsletter(models.Model):
 
 class Review(models.Model):
     poster = models.CharField(max_length=20)
-    content = models.TextField(null=True)
+    content = models.TextField()
     rating = models.IntegerField(validators=[
             MinValueValidator(1),
             MaxValueValidator(5)

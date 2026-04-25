@@ -624,6 +624,30 @@ body {
     font-style: italic;
 }
 
+/* REVIEWS */
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#star-container {
+    display: flex;
+}
+
+#star-container button {
+    background-color: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 50px;
+}
+
+#rating-1.is-active, #rating-2.is-active, #rating-3.is-active, #rating-4.is-active, #rating-5.is-active {
+    color: #c9a227 !important;
+}
+
 /* MOBILE STYLING */
 
 @media screen and (max-width: 768px) {

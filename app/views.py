@@ -18,7 +18,14 @@ def behind_counter_view(request):
 
 def community_view(request):
     current_newsletter = Newsletter.objects.order_by('-id').first()
-    return render(request, "community/community.html", {"newsletter": current_newsletter})
+    recent_reviews = Review.objects.order_by('-id')
+
+    context = {
+        "newsletter": current_newsletter,
+        "reviews": recent_reviews
+    }
+    
+    return render(request, "community/community.html", context)
 
 def all_newsletter_view(request):
     all_newsletters = Newsletter.objects.all()
@@ -54,13 +61,11 @@ def sign_up_view(request: HttpRequest) -> HttpResponse:
         form = CustomUserCreationForm()
     return render(request, "sign_up.html", {"form": form})
 
-@login_required
 def create_review_view(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.poster = request.user
             post.save()
             return redirect('home')
     else:

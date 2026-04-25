@@ -28,6 +28,9 @@
                     <div id="mobile-hidden-nav">
                         <a class="nav-links" href="{% url 'behind_counter_view' %}">BEHIND THE COUNTER</a>
                         <a class="nav-links" href="{% url 'community_view' %}">COMMUNITY</a>
+                        {% comment %} {% if user %}
+                            <a href="{% url 'owner_portal' %}">Owner Portal</a>
+                        {% endif %} {% endcomment %}
                     </div>
                 </div>
             </div>
