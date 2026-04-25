@@ -21,6 +21,12 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['starbright.onrender.com', 'starbright.com', 'www.starbright.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    "starbright.onrender.com",
+    "starbright.com",
+    "www.starbright.com",
+]
+
 
 # Application definition
 
