@@ -1,1 +1,1 @@
-web: gunicorn starbright.wsgi
+web: gunicorn starbright.wsgi:application
