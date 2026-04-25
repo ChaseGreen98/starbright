@@ -4,9 +4,49 @@
 <div class="create_review_form_container">
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+
+        <a id="rating-1">1</a>
+        <a id="rating-2">2</a>
+        <a id="rating-3">3</a>
+        <a id="rating-4">4</a>
+        <a id="rating-5">5</a>
+        
+        {{ form.content }}
+        {{ form.poster }}
+
         <button type="submit">Submit</button>
     </form>
 </div>
+
+<script>
+    var one_star = document.querySelector("#rating-1");
+    var two_star = document.querySelector("#rating-2");
+    var three_star = document.querySelector("#rating-3");
+    var four_star = document.querySelector("#rating-4");
+    var five_star = document.querySelector("#rating-5");
+
+    var rating = document.querySelector('input[type="hidden"]');
+
+    one_star.addEventListener("click", function() {
+        rating.value = 1;
+    });
+
+    two_star.addEventListener("click", function() {
+        rating.value = 2;
+    });
+
+    three_star.addEventListener("click", function() {
+        rating.value = 3;
+    });
+
+    four_star.addEventListener("click", function() {
+        rating.value = 4;
+    });
+
+    five_star.addEventListener("click", function() {
+        rating.value = 5;
+    });
+
+</script>
 
 {% endblock content %}

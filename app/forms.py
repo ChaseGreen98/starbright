@@ -63,5 +63,7 @@ class ReviewForm(ModelForm):
         model = Review
         fields = (
             'content',
-            'rating',
+            'poster',
         )
+
+    rating = forms.HiddenInput()

@@ -10,7 +10,8 @@ from django.contrib.admin.views.decorators import staff_member_required
 User = get_user_model()
 
 def home(request):
-    return render(request, "home.html")
+    current_newsletter = Newsletter.objects.order_by('-id').first()
+    return render(request, "home.html", {"newsletter": current_newsletter})
 
 def behind_counter_view(request):
     return render(request, "behind_counter.html")
@@ -18,6 +19,13 @@ def behind_counter_view(request):
 def community_view(request):
     current_newsletter = Newsletter.objects.order_by('-id').first()
     return render(request, "community/community.html", {"newsletter": current_newsletter})
+
+# ^^^
+# i kinda want to add another page or just a collapsable section for users to be able to see old newsletters,
+# like maybe the last 3 - 5 posted newsletters.
+# definitely not all of them though because at some point that's gonna be a lot of newsletters. 
+# OR OR OR CHASE YOU COULD WORK YOUR FANCY PAGINATION MAGIC !!!
+
 
 def login_view(request):
     if request.method == "POST":
@@ -52,7 +60,7 @@ def create_review_view(request):
     else:
         form = ReviewForm()
     
-    return render(request, 'create_review.html', {'form': form})
+    return render(request, 'forms/create_review.html', {'form': form})
 
 @staff_member_required
 @login_required
