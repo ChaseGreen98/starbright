@@ -1,0 +1,1 @@
+web: gunicorn starbright_project.wsgi
