@@ -17,7 +17,7 @@ SECRET_KEY = "django-insecure-tq7e4262c5)ymr3jg)@au(uc23j_eow2n&zfg=)55!w*rs9#a8
 # CSRF_COOKIE_SECURE = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['starbright.onrender.com', 'starbright.com', 'www.starbright.com']
 
