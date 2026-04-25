@@ -1,18 +1,29 @@
 {% extends "index.html" %}
 {% block content %}
 
-<div class="create_review_form_container">
+<div class="review-container">
     <form method="post">
         {% csrf_token %}
 
-        <a id="rating-1">1</a>
-        <a id="rating-2">2</a>
-        <a id="rating-3">3</a>
-        <a id="rating-4">4</a>
-        <a id="rating-5">5</a>
-        
-        {{ form.content }}
-        {{ form.poster }}
+        <input type="hidden" id="rating">
+
+        <div id="star-container">
+            <button id="rating-1">&#9733;</button>
+            <button id="rating-2">&#9733;</button>
+            <button id="rating-3">&#9733;</button>
+            <button id="rating-4">&#9733;</button>
+            <button id="rating-5">&#9733;</button>
+        </div>
+
+        <div id="review-container">
+            <p>review:</p>
+            {{ form.content }}
+        </div>
+
+        <div id="name-container">
+            <p>your name:</p>
+            {{ form.poster }}
+        </div>
 
         <button type="submit">Submit</button>
     </form>
@@ -25,26 +36,101 @@
     var four_star = document.querySelector("#rating-4");
     var five_star = document.querySelector("#rating-5");
 
-    var rating = document.querySelector('input[type="hidden"]');
+    var rating = document.querySelector("#rating");
 
+    one_star.addEventListener("mouseenter", function() {
+        one_star.style.color = "#c9a227";
+    });
+    one_star.addEventListener("mouseleave", function() {
+        one_star.style.color = "black"
+    });
     one_star.addEventListener("click", function() {
         rating.value = 1;
+        one_star.classList.add("is-active");
+        two_star.classList.remove("is-active");
+        three_star.classList.remove("is-active");
+        four_star.classList.remove("is-active");
+        five_star.classList.remove("is-active");
     });
 
+    two_star.addEventListener("mouseenter", function() {
+        one_star.style.color = "#c9a227";
+        two_star.style.color = "#c9a227";
+    });
+    two_star.addEventListener("mouseleave", function() {
+        one_star.style.color = "black";
+        two_star.style.color = "black";
+    });
     two_star.addEventListener("click", function() {
         rating.value = 2;
+        one_star.classList.add("is-active");
+        two_star.classList.add("is-active");
+        three_star.classList.remove("is-active");
+        four_star.classList.remove("is-active");
+        five_star.classList.remove("is-active");
     });
 
+    three_star.addEventListener("mouseenter", function() {
+        one_star.style.color = "#c9a227";
+        two_star.style.color = "#c9a227";
+        three_star.style.color = "#c9a227";
+    });
+    three_star.addEventListener("mouseleave", function() {
+        one_star.style.color = "black";
+        two_star.style.color = "black";
+        three_star.style.color = "black";
+    });
     three_star.addEventListener("click", function() {
         rating.value = 3;
+        one_star.classList.add("is-active");
+        two_star.classList.add("is-active");
+        three_star.classList.add("is-active");
+        four_star.classList.remove("is-active");
+        five_star.classList.remove("is-active");
     });
 
+    four_star.addEventListener("mouseenter", function() {
+        one_star.style.color = "#c9a227";
+        two_star.style.color = "#c9a227";
+        three_star.style.color = "#c9a227";
+        four_star.style.color = "#c9a227";
+    });
+    four_star.addEventListener("mouseleave", function() {
+        one_star.style.color = "black";
+        two_star.style.color = "black";
+        three_star.style.color = "black";
+        four_star.style.color = "black";
+    });
     four_star.addEventListener("click", function() {
         rating.value = 4;
+        one_star.classList.add("is-active");
+        two_star.classList.add("is-active");
+        three_star.classList.add("is-active");
+        four_star.classList.add("is-active");
+        five_star.classList.remove("is-active");
     });
 
+    five_star.addEventListener("mouseenter", function() {
+        one_star.style.color = "#c9a227";
+        two_star.style.color = "#c9a227";
+        three_star.style.color = "#c9a227";
+        four_star.style.color = "#c9a227";
+        five_star.style.color = "#c9a227";
+    });
+    five_star.addEventListener("mouseleave", function() {
+        one_star.style.color = "black";
+        two_star.style.color = "black";
+        three_star.style.color = "black";
+        four_star.style.color = "black";
+        five_star.style.color = "black";
+    });
     five_star.addEventListener("click", function() {
         rating.value = 5;
+        one_star.classList.add("is-active");
+        two_star.classList.add("is-active");
+        three_star.classList.add("is-active");
+        four_star.classList.add("is-active");
+        five_star.classList.add("is-active");
     });
 
 </script>
