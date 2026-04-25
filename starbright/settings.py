@@ -19,12 +19,12 @@ CSRF_COOKIE_SECURE = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['starbright.onrender.com', 'starbright.com', 'www.starbright.com']
+ALLOWED_HOSTS = ['starbright.onrender.com', 'starbrightcafe.com', 'www.starbrightcafe.com']
 
 CSRF_TRUSTED_ORIGINS = [
     "https://starbright.onrender.com",
-    "https://starbright.com",
-    "https://www.starbright.com",
+    "https://starbrightcafe.com",
+    "https://www.starbrightcafe.com",
 ]
 
 
