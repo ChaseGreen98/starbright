@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+{% for letter in page_obj %}
+
+    <h2>{{ newsletter.title }}</h2>
+    <p>{{ newsletter.para_one }}</p>
+    <p>{{ newsletter.para_two }}</p>
+    <p>{{ newsletter.para_three }}</p>
+
+{% endfor %}
+
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+            ← Previous
+        </a>
+    {% endif %}
+
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+            Next →
+        </a>
+    {% endif %}
+</div>
+
+{% endblock content %}

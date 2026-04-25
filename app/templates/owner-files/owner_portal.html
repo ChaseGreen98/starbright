@@ -5,8 +5,12 @@
 {% block content %}
 
 <div id="owner-portal-actions">
-    <h1>Welcome to the Owner Portal!</h1>
-    <p>this is where the magic happens</p>
+    <section class="owner-portal-hero">
+        <p class="owner-portal-kicker">Starbright Cafe</p>
+        <h1>Owner Portal</h1>
+        <p>Manage the pieces that keep the cafe experience glowing.</p>
+    </section>
+
     <div class="owner-action-panel">
         <h1>Newsletter</h1>
         <a class="owner-action" href="{% url 'create_post_view' %}">create a new newsletter post</a>
