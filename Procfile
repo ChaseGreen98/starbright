@@ -1,1 +1,1 @@
-web: gunicorn starbright.wsgi:application
+python -m gunicorn mysite.asgi:application -k uvicorn.workers.UvicornWorker
