@@ -60,7 +60,7 @@ def create_review_view(request):
     else:
         form = ReviewForm()
     
-    return render(request, 'create_review.html', {'form': form})
+    return render(request, 'forms/create_review.html', {'form': form})
 
 @staff_member_required
 @login_required

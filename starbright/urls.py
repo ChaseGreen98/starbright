@@ -13,8 +13,8 @@ urlpatterns = [
     path("owner-portal/", owner_portal_view, name="owner_portal"),
     path("owner-portal/create-post/", news_create_form_view, name="create_post_view"),
     path("owner-portal/update-post/", news_update_form_view, name="update_post_view"),
-    path("create-review", create_review_view, name="create_review"),
-    path("sign-up", sign_up_view, name="sign_up"),
+    path("create-review/", create_review_view, name="create_review"),
+    path("sign-up/", sign_up_view, name="sign_up"),
 ]
 
 if settings.DEBUG:

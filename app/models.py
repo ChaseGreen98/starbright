@@ -9,13 +9,9 @@ class Newsletter(models.Model):
     para_three = models.TextField(null=True)
 
 class Review(models.Model):
-    poster = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        related_name="review"
-    )
-    content = models.TextField()
+    poster = models.CharField(max_length=20)
+    content = models.TextField(null=True)
     rating = models.IntegerField(validators=[
             MinValueValidator(1),
-            MaxValueValidator(10)
+            MaxValueValidator(5)
         ])
