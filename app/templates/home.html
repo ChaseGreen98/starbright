@@ -24,15 +24,19 @@
 {% endif %}
 
 <div id="previews-section">
-    <div class="preview-card">
-        <a href="{% url 'community_view' %}">the latest from the newsletter:</a>
-        <p>{{ newsletter.title }}</p>
-    </div>
-    <div class="preview-card">
-        <a></a>
-    </div>
-    <div class="preview-card">
-        <a href="{% url 'create_review' %}">leave a review:</a>
+    <div id="preview-actions">
+        <a class="preview-card" href="{% url 'community_view' %}">
+            <span class="preview-kicker">Latest Newsletter</span>
+            <span class="preview-title">{{ newsletter.title|default:"Read what is new" }}</span>
+        </a>
+        <a class="preview-card" target=blank href="https://order.dripos.com/Starbright-Cafe">
+            <span class="preview-kicker">Freshly Made</span>
+            <span class="preview-title">Order Online</span>
+        </a>
+        <a class="preview-card" href="{% url 'create_review' %}">
+            <span class="preview-kicker">Share the Love</span>
+            <span class="preview-title">Leave a Review</span>
+        </a>
     </div>
 </div>
 
