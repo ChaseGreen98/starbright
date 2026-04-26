@@ -14,7 +14,7 @@ SECRET_KEY = "django-insecure-tq7e4262c5)ymr3jg)@au(uc23j_eow2n&zfg=)55!w*rs9#a8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['starbright.onrender.com', 'starbrightcafe.com', 'www.starbrightcafe.com']
 
 
 # Application definition
