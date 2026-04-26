@@ -17,8 +17,15 @@ def behind_counter_view(request):
     return render(request, "behind_counter.html")
 
 def community_view(request):
+    reviews = Review.objects.order_by('-id')
     current_newsletter = Newsletter.objects.order_by('-id').first()
-    return render(request, "community/community.html", {"newsletter": current_newsletter})
+
+    context = {
+        "newsletter": current_newsletter,
+        "reviews": reviews
+    }
+
+    return render(request, "community/community.html", context)
 
 # ^^^
 # i kinda want to add another page or just a collapsable section for users to be able to see old newsletters,
@@ -52,15 +59,16 @@ def sign_up_view(request: HttpRequest) -> HttpResponse:
         form = CustomUserCreationForm()
     return render(request, "sign_up.html", {"form": form})
 
-@login_required
 def create_review_view(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.poster = request.user
+            post.rating = request.POST.get("rating")     
+            if post.rating == '':
+                raise ValueError        
             post.save()
-            return redirect('home')
+            return redirect('community_view')
     else:
         form = ReviewForm()
     

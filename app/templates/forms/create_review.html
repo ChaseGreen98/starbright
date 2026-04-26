@@ -5,18 +5,20 @@
     <form method="post">
         {% csrf_token %}
 
-        <input type="hidden" id="rating">
+        <h1>Leave a review</h1>
+
+        {{ form.rating }}
 
         <div id="star-container">
-            <button id="rating-1">&#9733;</button>
-            <button id="rating-2">&#9733;</button>
-            <button id="rating-3">&#9733;</button>
-            <button id="rating-4">&#9733;</button>
-            <button id="rating-5">&#9733;</button>
+            <button type="button" id="rating-1">&#9733;</button>
+            <button type="button" id="rating-2">&#9733;</button>
+            <button type="button" id="rating-3">&#9733;</button>
+            <button type="button" id="rating-4">&#9733;</button>
+            <button type="button" id="rating-5">&#9733;</button>
         </div>
 
-        <div id="review-container">
-            <p>review:</p>
+        <div id="review-description">
+            <p>review description:</p>
             {{ form.content }}
         </div>
 
@@ -25,7 +27,7 @@
             {{ form.poster }}
         </div>
 
-        <button type="submit">Submit</button>
+        <button id="review-submit-button" type="submit">Submit</button>
     </form>
 </div>
 
@@ -36,7 +38,7 @@
     var four_star = document.querySelector("#rating-4");
     var five_star = document.querySelector("#rating-5");
 
-    var rating = document.querySelector("#rating");
+     rating = document.querySelector('input[name="rating"]');
 
     one_star.addEventListener("mouseenter", function() {
         one_star.style.color = "#c9a227";

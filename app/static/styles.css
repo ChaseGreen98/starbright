@@ -10,6 +10,12 @@
     src: url(/app/static/fonts/doulossilr-webfont.woff2) format('woff2');
 }
 
+@font-face {
+    font-family: Serenata;
+    src: url(/app/static/fonts/serenata-webfont.woff) format('woff');
+    src: url(/app/static/fonts/serenata-webfont.woff2) format('woff2');
+}
+
 /* BASE STYLING (EXTENDS ACROSS ALL PAGES) */
 
 h1 {
@@ -20,13 +26,18 @@ h1 {
 
 h2 {
     text-transform: uppercase;
-    font-family: Doulossil;
+    font-family: Serenata;
     font-weight: 250;
     color: rgb(30, 30, 30);
 }
 
+h3 {
+    font-family: Serenata;
+    color:rgb(30, 30, 30);
+}
+
 p, a {
-    font-family: Doulossil;
+    font-family: Serenata;
     color: rgb(30, 30, 30);
 }
 
@@ -85,7 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-family: Doulossil;
+    font-family: Serenata;
     font-size: 20px;
     height: 100px;
     padding: 0 15px;
@@ -122,7 +133,7 @@ body {
     justify-content: center;
     gap: 50px;
     margin: 0;
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: rgb(30, 30, 30);
     width: 100%;
 }
@@ -150,6 +161,7 @@ body {
 #contact-section-1 {
     display: flex;
     flex-direction: column;
+    font-size: 12px;
 }
 
 #socials {
@@ -161,7 +173,7 @@ body {
 }
 
 #socials a img {
-    width: 25px;
+    width: 20px;
     filter: invert();
 }
 
@@ -187,6 +199,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     column-gap: 10px;
+    font-size: 12px;
 }
 
 #store-days {
@@ -321,7 +334,7 @@ body {
 }
 
 .preview-kicker {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Serenata;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2.5px;
@@ -391,7 +404,7 @@ body {
 
 .owner-portal-kicker {
     margin: 0 0 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Serenata;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -512,7 +525,7 @@ body {
 
 .newsletter-form-kicker {
     margin: 0 0 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Serenata;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -572,7 +585,7 @@ body {
 
 .newsletter-form-panel label {
     margin-bottom: 8px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Serenata;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -590,7 +603,7 @@ body {
     border-radius: 8px;
     background: rgba(255, 250, 239, 0.95);
     color: rgb(30 30 30);
-    font-family: Doulossil;
+    font-family: Serenata;
     font-size: 16px;
     box-shadow: inset 0 0 0 1px rgba(255, 244, 194, 0.7);
     transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
@@ -619,7 +632,7 @@ body {
     border-radius: 8px;
     background: linear-gradient(135deg, rgba(28, 20, 18, 0.94), rgba(58, 39, 35, 0.9));
     color: white;
-    font-family: Doulossil;
+    font-family: Serenata;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -672,7 +685,7 @@ body {
 
 .bio-kicker {
     margin: 0 0 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Serenata;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -937,7 +950,7 @@ body {
 .community-hero {
     width: 100%;
     min-height: 48vh;
-    padding: 72px 22px 58px;
+    padding: 50px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -949,18 +962,9 @@ body {
     position: relative;
 }
 
-.community-hero::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: min(760px, 82vw);
-    height: 1px;
-    background: linear-gradient(to right, transparent, #fff4c2, #c9a227, #fff4c2, transparent);
-}
-
 .community-kicker {
-    margin: 0 0 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-family: Serenata;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -970,14 +974,14 @@ body {
 
 .community-hero .community-kicker {
     color: #fff0b0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
 }
 
 .community-title {
-    margin: 0;
-    font-size: clamp(52px, 8vw, 92px);
+    margin: -25px 0 0 0;
+    font-size: 80px;
     color: white;
-    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.42);
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
 }
 
 .community-intro {
@@ -986,43 +990,7 @@ body {
     font-size: 19px;
     line-height: 1.8;
     color: white;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
-}
-
-.community-cards {
-    width: min(1080px, 90vw);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin: -34px 0 64px;
-    position: relative;
-    z-index: 1;
-}
-
-.community-card {
-    min-height: 190px;
-    padding: 30px 24px;
-    box-sizing: border-box;
-    text-align: center;
-    background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 251, 0.9)) padding-box,
-        linear-gradient(135deg, #fff4c2, #c9a227, #ffbed4) border-box;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    box-shadow: 0 18px 36px rgba(30, 30, 30, 0.14);
-}
-
-.community-card h2 {
-    margin: 0 0 14px;
-    color: #c9a227;
-    letter-spacing: 2px;
-}
-
-.community-card p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #4f403b;
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
 }
 
 #newsletter-section {
@@ -1031,27 +999,18 @@ body {
     padding: 46px min(7vw, 66px);
     box-sizing: border-box;
     text-align: center;
-    background: linear-gradient(45deg, rgb(255 146 186 / 85%), rgb(255 255 255 / 85%), rgb(255 146 186 / 85%)) padding-box;
-    border: 2px solid rgba(30 30 30 / 0.75);
+    background: white;
+    border: 3px solid rgba(30 30 30 / 0.75);
     border-radius: 8px;
     box-shadow: 0 24px 54px rgba(30, 30, 30, 0.24);
     position: relative;
-}
-
-#newsletter-section::before {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    border: 1px solid rgba(255, 244, 194, 0.22);
-    border-radius: 5px;
-    pointer-events: none;
 }
 
 #newsletter-section h1 {
     margin: 0 0 26px;
     font-size: 50px;
     color: rgb(30 30 30);
-    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.45);
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
 }
 
 .newsletter-card {
@@ -1063,14 +1022,14 @@ body {
 }
 
 .newsletter-card h2 {
-    margin: 0 0 18px;
+    margin: 0;
     color: #c9a227;
     letter-spacing: 2px;
 }
 
 .newsletter-card p {
     width: min(680px, 100%);
-    margin: 0 auto 16px;
+    margin: 0;
     font-size: 16px;
     line-height: 1.85;
     color: rgb(30 30 30);
@@ -1087,22 +1046,74 @@ body {
 .community-quote p {
     max-width: 760px;
     margin: 0 auto;
-    font-family: Brittany;
-    font-size: clamp(34px, 5vw, 56px);
+    font-family: Serenata;
+    font-style: italic;
+    font-size: 30px;
     line-height: 1.1;
     color: #b88914;
 }
 
-/* REVIEWS */
+#reviews-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+#reviews-section h1 {
+    margin: 0;
+    font-size: 50px;
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
+}
+
+.reviews-card {
+    background-color: white;
+    border: 3px solid rgba(30 30 30 / 0.75);
+    border-radius: 8px;
+    box-shadow: 0 24px 54px rgba(30, 30, 30, 0.24);
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+}
+
+.reviews-card h3, .reviews-card p {
+    margin: 10px;
+}
+
+/* REVIEWS PAGE */
 
 .review-container {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1)),
+        url("/app/static/images/pink-marble.png") center/cover fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+.review-container h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.review-container form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border: 3px solid rgba(30 30 30 / 0.75);
+    border-radius: 8px;
+    box-shadow: 0 24px 54px rgba(30, 30, 30, 0.24);
 }
 
 #star-container {
     display: flex;
+    justify-content: center;
 }
 
 #star-container button {
@@ -1116,6 +1127,62 @@ body {
 #rating-1.is-active, #rating-2.is-active, #rating-3.is-active, #rating-4.is-active, #rating-5.is-active {
     color: #c9a227 !important;
 }
+
+#review-description {
+    justify-content: center;
+}
+
+#id_rating {
+    display: none;
+}
+
+#id_content {
+    width: 30vw;
+    height: 30vh;
+    resize: none; /* Disables the draggable corner */
+    overflow-y: auto; /* Adds a scrollbar only when needed */
+    white-space: pre-wrap;
+}
+
+#review-description p, #name-container p {
+    margin-bottom: 0;
+}
+
+#name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#review-description textarea, #name-container input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid rgba(201, 162, 39, 0.7);
+    border-radius: 16px;
+    background-color: rgba(255, 250, 252, 0.96);
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: 0.25s ease;
+}
+
+#review-description input:focus, #name-container input:focus {
+    outline: none;
+    border-color: #ff92ba;
+    box-shadow: 0 0 0 4px rgba(255, 146, 186, 0.16);
+}
+
+#review-submit-button {
+    margin-top: 20px;
+    background: #ff92ba;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+} 
 
 /* MOBILE STYLING */
 
