@@ -16,6 +16,7 @@ urlpatterns = [
     path("create-review/", create_review_view, name="create_review"),
     path("sign-up/", sign_up_view, name="sign_up"),
     path("logout/", logout_view, name="logout"),
+    path("owner-portal/news-list", newsletter_list, name="newsletter_list"),
 ]
 
 if settings.DEBUG:
