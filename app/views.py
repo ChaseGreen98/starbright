@@ -74,12 +74,12 @@ def create_review_view(request):
     
     return render(request, 'forms/create_review.html', {'form': form})
 
-@staff_member_required
+
 @login_required
 def owner_portal_view(request):
     return render(request, "owner-files/owner_portal.html")
 
-@staff_member_required
+
 @login_required
 def news_create_form_view(request):
     if request.method == "POST":
@@ -92,7 +92,7 @@ def news_create_form_view(request):
         form = NewsForm()
     return render(request, "forms/news_form.html", {"form": form})
 
-@staff_member_required
+
 @login_required
 def news_update_form_view(request, id):
     news_item = get_object_or_404(Newsletter, id=id)
