@@ -91,7 +91,7 @@ def news_create_form_view(request):
         if form.is_valid():
             news_item = form.save(commit=False)
             news_item.save()
-            return redirect("owner_portal_view")
+            return redirect("owner_portal")
     else:
         form = NewsForm()
     return render(request, "forms/news_form.html", {"form": form})
@@ -105,7 +105,7 @@ def news_update_form_view(request, id):
         form = NewsForm(request.POST, instance=news_item)
         if form.is_valid():
             form.save()
-            return redirect("owner_portal_view")
+            return redirect("owner_portal")
     else:
         form = NewsForm(instance=news_item)
 
