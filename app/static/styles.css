@@ -26,18 +26,18 @@ h1 {
 
 h2 {
     text-transform: uppercase;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-weight: 250;
     color: rgb(30, 30, 30);
 }
 
 h3 {
-    font-family: Serenata;
+    font-family: Doulossil;
     color:rgb(30, 30, 30);
 }
 
 p, a {
-    font-family: Serenata;
+    font-family: Doulossil;
     color: rgb(30, 30, 30);
 }
 
@@ -96,7 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 20px;
     height: 100px;
     padding: 0 15px;
@@ -334,7 +334,7 @@ body {
 }
 
 .preview-kicker {
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2.5px;
@@ -404,7 +404,7 @@ body {
 
 .owner-portal-kicker {
     margin: 0 0 10px;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -525,7 +525,7 @@ body {
 
 .newsletter-form-kicker {
     margin: 0 0 10px;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -585,7 +585,7 @@ body {
 
 .newsletter-form-panel label {
     margin-bottom: 8px;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -603,7 +603,7 @@ body {
     border-radius: 8px;
     background: rgba(255, 250, 239, 0.95);
     color: rgb(30 30 30);
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 16px;
     box-shadow: inset 0 0 0 1px rgba(255, 244, 194, 0.7);
     transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
@@ -632,7 +632,7 @@ body {
     border-radius: 8px;
     background: linear-gradient(135deg, rgba(28, 20, 18, 0.94), rgba(58, 39, 35, 0.9));
     color: white;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -685,7 +685,7 @@ body {
 
 .bio-kicker {
     margin: 0 0 10px;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -964,7 +964,7 @@ body {
 
 .community-kicker {
     margin: 0;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -1046,7 +1046,7 @@ body {
 .community-quote p {
     max-width: 760px;
     margin: 0 auto;
-    font-family: Serenata;
+    font-family: Doulossil;
     font-style: italic;
     font-size: 30px;
     line-height: 1.1;
