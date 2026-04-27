@@ -26,7 +26,11 @@ def community_view(request):
     }
 
     return render(request, "community/community.html", context)
-
+def all_newsletter_view(request):
+    all_newsletters = Newsletter.objects.all()
+    paginator = Paginator(all_newsletters, 10)  
+    page_obj = paginator.get_page(request.GET.get("page"))
+    return render(request, 'all_news.html', {"page_obj": page_obj})
 # ^^^
 # i kinda want to add another page or just a collapsable section for users to be able to see old newsletters,
 # like maybe the last 3 - 5 posted newsletters.
