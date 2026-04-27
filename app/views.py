@@ -98,7 +98,7 @@ def news_create_form_view(request):
 
 @login_required
 def newsletter_list(request):
-    all_newsletters = Newsletter.objects.all().order_by('-created_at')
+    all_newsletters = Newsletter.objects.all()
     paginator = Paginator(all_newsletters, 10)  
     page_obj = paginator.get_page(request.GET.get("page"))
     return render(request, 'news_list.html', {"page_obj": page_obj})
