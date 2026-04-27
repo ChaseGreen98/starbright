@@ -16,7 +16,7 @@ SECRET_KEY = "django-insecure-tq7e4262c5)ymr3jg)@au(uc23j_eow2n&zfg=)55!w*rs9#a8
 DEBUG = False
 
 ALLOWED_HOSTS = ['starbright.onrender.com', 'starbrightcafe.com', 'www.starbrightcafe.com', '127.0.0.1']
-
+LOGIN_URL = 'login'
 
 # Application definition
 
