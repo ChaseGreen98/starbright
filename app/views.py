@@ -96,6 +96,12 @@ def news_create_form_view(request):
         form = NewsForm()
     return render(request, "forms/news_form.html", {"form": form})
 
+@login_required
+def newsletter_list(request):
+    all_newsletters = Newsletter.objects.all()
+    paginator = Paginator(all_newsletters, 10)  
+    page_obj = paginator.get_page(request.GET.get("page"))
+    return render(request, 'news_list.html', {"page_obj": page_obj})
 
 @login_required
 def news_update_form_view(request, id):
