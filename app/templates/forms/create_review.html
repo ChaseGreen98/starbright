@@ -1,34 +1,40 @@
 {% extends "index.html" %}
 {% block content %}
 
-<div class="review-container">
-    <form method="post">
-        {% csrf_token %}
+<div id="review-page">
+    <div class="hero">
+        <p class="kicker">Starbright Cafe</p>
+        <h1 class="title">Leave a review</h1>
+    </div>
 
-        <h1>Leave a review</h1>
+    <div class="review-container">
+        <form method="post">
+            {% csrf_token %}
 
-        {{ form.rating }}
 
-        <div id="star-container">
-            <button type="button" id="rating-1">&#9733;</button>
-            <button type="button" id="rating-2">&#9733;</button>
-            <button type="button" id="rating-3">&#9733;</button>
-            <button type="button" id="rating-4">&#9733;</button>
-            <button type="button" id="rating-5">&#9733;</button>
-        </div>
+            {{ form.rating }}
 
-        <div id="review-description">
-            <p>review description:</p>
-            {{ form.content }}
-        </div>
+            <div id="star-container">
+                <button type="button" id="rating-1">&#9733;</button>
+                <button type="button" id="rating-2">&#9733;</button>
+                <button type="button" id="rating-3">&#9733;</button>
+                <button type="button" id="rating-4">&#9733;</button>
+                <button type="button" id="rating-5">&#9733;</button>
+            </div>
 
-        <div id="name-container">
-            <p>your name:</p>
-            {{ form.poster }}
-        </div>
+            <div id="review-description">
+                <p>review description:</p>
+                {{ form.content }}
+            </div>
 
-        <button id="review-submit-button" type="submit">Submit</button>
-    </form>
+            <div id="name-container">
+                <p>your name:</p>
+                {{ form.poster }}
+            </div>
+
+            <button id="review-submit-button" type="submit">Submit</button>
+        </form>
+    </div>
 </div>
 
 <script>
@@ -38,7 +44,7 @@
     var four_star = document.querySelector("#rating-4");
     var five_star = document.querySelector("#rating-5");
 
-     rating = document.querySelector('input[name="rating"]');
+    rating = document.querySelector('input[name="rating"]');
 
     one_star.addEventListener("mouseenter", function() {
         one_star.style.color = "#c9a227";

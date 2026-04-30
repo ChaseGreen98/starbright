@@ -1,64 +1,48 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div class="container mt-4">
-    <h2 class="mb-4">Select a Newsletter to Update</h2>
+<div class="news_update_form_container">
+    <div class="hero">
+        <p class="kicker">Owner Portal</p>
+        <h1 class="title">Update</h2>
+        <p class="intro">Select a newsletter to update</p>
+    </div>
 
     {% if page_obj %}
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Created</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for newsletter in page_obj %}
-                <tr>
-                    <td>{{ newsletter.title }}</td>
-                    <td>{{ newsletter.created_at|date:"M d, Y H:i" }}</td>
-                    <td>
-                        <a href="{% url 'update_post_view' newsletter.id %}" class="btn btn-sm btn-primary">
-                            Edit
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div id="newslist">
+        <div id="news-column-1">
+            <h2>Title</h2>
+            {% for newsletter in page_obj %}
+                <p>{{ newsletter.title }}</p>
+            {% endfor %}
+        </div>
+        <div id="news-column-2">
+            <h2>Action</h2>
+            {% for newsletter in page_obj %}
+            <div id="newsletter-actions">
+                <a href="{% url 'update_post_view' newsletter.id %}">Edit</a>
+                <a href="{% url 'news_delete' newsletter.id %}">Delete</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
-        <!-- Pagination -->
-        <nav>
-            <ul class="pagination">
-                {% if page_obj.has_previous %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page=1">&laquo; First</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                    </li>
-                {% endif %}
+    <!-- Pagination -->
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">&laquo;</a>
+        {% endif %}
 
-                <li class="page-item active">
-                    <span class="page-link">
-                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                    </span>
-                </li>
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
-                {% if page_obj.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
-                    </li>
-                {% endif %}
-            </ul>
-        </nav>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">&raquo;</a>
+        {% endif %}
+    </div>
 
     {% else %}
         <p>No newsletters found.</p>
     {% endif %}
 </div>
+
 {% endblock content %}

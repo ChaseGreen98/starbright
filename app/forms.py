@@ -57,6 +57,7 @@ class NewsForm(ModelForm):
             'para_three',
         )
 
+
 class ReviewForm(ModelForm):
 
     class Meta:

@@ -6,18 +6,18 @@
 
 <div class="community-section">
 
-    <section class="community-hero">
-        <p class="community-kicker">Starbright Cafe</p>
-        <h1 class="community-title">Community</h1>
-        <p class="community-intro">
+    <section class="hero">
+        <p class="kicker">Starbright Cafe</p>
+        <h1 class="title">Community</h1>
+        <p class="intro">
             Giving back is part of the experience here. Every cup, conversation, and gathering
             is rooted in care for the people we serve.
         </p>
     </section>
 
     <div id="newsletter-section">
-        <p class="community-kicker">From the Owner</p>
-        <h1>The Latest News</h1>
+        <p class="kicker">From the Owner</p>
+        <h1 class="title">The Latest News</h1>
         {% if newsletter %}
         <div class="newsletter-card">
             <h2>{{ newsletter.title }}</h2>
@@ -40,7 +40,7 @@
 </div>
 
 <div id="reviews-section">
-    <h1>Reviews</h1>
+    <h1 class="title">Reviews</h1>
     <a href="{% url 'create_review' %}">Leave a review</a>
     {% if reviews %}
     {% for review in reviews %}

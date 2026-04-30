@@ -2,29 +2,35 @@
 
 {% block content %}
 
-{% for newsletter in page_obj %}
+<div id="newsletter-page">
 
-    <h2>{{ newsletter.title }}</h2>
-    <p>{{ newsletter.para_one }}</p>
-    <p>{{ newsletter.para_two }}</p>
-    <p>{{ newsletter.para_three }}</p>
+    <section class="hero">
+        <p class="kicker">Starbright Cafe</p>
+        <h1 class="title">All Newsletters</h1>
+    </section>
+    
+    <div id="newsletter-panel">
+        {% for newsletter in page_obj %}
+        <div class="single-newsletter">
+            <h2>{{ newsletter.title }}</h2>
+            <p>{{ newsletter.para_one }}</p>
+            <p>{{ newsletter.para_two }}</p>
+            <p>{{ newsletter.para_three }}</p>
+        </div>
+        {% endfor %}
+    </div>
 
-{% endfor %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">&laquo;</a>
+        {% endif %}
 
-<div class="pagination">
-    {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
-            ← Previous
-        </a>
-    {% endif %}
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
-    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-
-    {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
-            Next →
-        </a>
-    {% endif %}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">&raquo;</a>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock content %}

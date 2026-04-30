@@ -17,7 +17,7 @@ def behind_counter_view(request):
     return render(request, "behind_counter.html")
 
 def community_view(request):
-    reviews = Review.objects.order_by('-id')
+    reviews = Review.objects.order_by('-id')[:3]
     current_newsletter = Newsletter.objects.order_by('-id').first()
 
     context = {
@@ -30,7 +30,7 @@ def community_view(request):
 
 def all_newsletter_view(request):
     all_newsletters = Newsletter.objects.all()
-    paginator = Paginator(all_newsletters, 10)  
+    paginator = Paginator(all_newsletters, 3)
     page_obj = paginator.get_page(request.GET.get("page"))
     return render(request, 'all_news.html', {"page_obj": page_obj})
 
@@ -96,7 +96,7 @@ def news_create_form_view(request):
 @login_required
 def newsletter_list(request):
     all_newsletters = Newsletter.objects.all()
-    paginator = Paginator(all_newsletters, 10)  
+    paginator = Paginator(all_newsletters, 5)
     page_obj = paginator.get_page(request.GET.get("page"))
     return render(request, 'news_list.html', {"page_obj": page_obj})
 
@@ -113,6 +113,16 @@ def news_update_form_view(request, id):
         form = NewsForm(instance=news_item)
 
     return render(request, "forms/newsletter_update_form.html", {"form": form})
+
+@login_required
+def news_delete_view(request, id):
+    news_item = get_object_or_404(Newsletter, id=id)
+
+    if request.method == "POST":
+        news_item.delete()
+        return redirect("owner_portal")
+    
+    return render(request, "forms/confirm_delete.html", {"news_item": news_item})
 
 @login_required
 def password_change_view(request):

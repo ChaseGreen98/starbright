@@ -5,16 +5,16 @@
 {% block content %}
 
 <div id="owner-portal-actions">
-    <section class="owner-portal-hero">
-        <p class="owner-portal-kicker">Starbright Cafe</p>
-        <h1>Owner Portal</h1>
-        <p>Manage the pieces that keep the cafe experience glowing.</p>
+    <section class="hero">
+        <p class="kicker">Starbright Cafe</p>
+        <h1 class="title">Owner Portal</h1>
+        <p class="intro">Manage the pieces that keep the cafe experience glowing.</p>
     </section>
 
     <div class="owner-action-panel">
-        <h1>Newsletter</h1>
+        <h1 class="title">Newsletter</h1>
         <a class="owner-action" href="{% url 'create_post_view' %}">create a new newsletter post</a>
-        <a class="owner-action" href="{% url 'newsletter_list' %}">update an existing newsletter post</a>
+        <a class="owner-action" href="{% url 'newsletter_list' %}">edit/delete an existing newsletter post</a>
     </div>
 
 </div>

@@ -45,6 +45,47 @@ body {
     margin: 0;
 }
 
+.hero {
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(30, 30, 30, 0.55), rgba(30, 30, 30, 0));
+    position: relative;
+}
+
+.title {
+    margin: 0;
+    font-size: 65px;
+    color: white;
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
+}
+
+.kicker {
+    z-index: 1;
+    font-family: Doulossil;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #ffe5a3;
+    margin-bottom: 10px;
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
+}
+
+.intro {
+    max-width: 720px;
+    margin: 10px 0 0;
+    font-size: 20px;
+    line-height: 1.8;
+    color: white;
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
+}
+
 /* NAVBAR */
 
 #navbar {
@@ -339,7 +380,7 @@ body {
     font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: #ffd977;
+    color: #ffe5a3;
     margin-bottom: 8px;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
@@ -377,56 +418,6 @@ body {
         url("/app/static/images/pink-marble.png") center/cover fixed;
     padding: 0 0 68px;
     overflow: hidden;
-}
-
-.owner-portal-hero {
-    width: 100%;
-    min-height: 42vh;
-    padding: 72px 22px 58px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(30, 30, 30, 0.55), rgba(30, 30, 30, 0));
-    position: relative;
-}
-
-.owner-portal-hero::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: min(760px, 82vw);
-    height: 1px;
-    background: linear-gradient(to right, transparent, #fff4c2, #c9a227, #fff4c2, transparent);
-}
-
-.owner-portal-kicker {
-    margin: 0 0 10px;
-    font-family: Doulossil;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #fff0b0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-}
-
-.owner-portal-hero h1 {
-    margin: 0;
-    font-size: clamp(52px, 8vw, 92px);
-    color: white;
-    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.42);
-}
-
-.owner-portal-hero p:last-child {
-    max-width: 720px;
-    margin: 16px auto 0;
-    font-size: 19px;
-    line-height: 1.8;
-    color: white;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .owner-action-panel {
@@ -493,56 +484,6 @@ body {
         url("/app/static/images/pink-marble.png") center/cover fixed;
     padding: 0 0 68px;
     overflow: hidden;
-}
-
-.newsletter-form-hero {
-    width: 100%;
-    min-height: 38vh;
-    padding: 68px 22px 54px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(30, 30, 30, 0.55), rgba(30, 30, 30, 0));
-    position: relative;
-}
-
-.newsletter-form-hero::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: min(760px, 82vw);
-    height: 1px;
-    background: linear-gradient(to right, transparent, #fff4c2, #c9a227, #fff4c2, transparent);
-}
-
-.newsletter-form-kicker {
-    margin: 0 0 10px;
-    font-family: Doulossil;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #fff0b0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-}
-
-.newsletter-form-hero h1 {
-    margin: 0;
-    font-size: clamp(52px, 8vw, 86px);
-    color: white;
-    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.42);
-}
-
-.newsletter-form-hero p:last-child {
-    max-width: 720px;
-    margin: 16px auto 0;
-    font-size: 19px;
-    line-height: 1.8;
-    color: white;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .newsletter-form-panel {
@@ -650,40 +591,6 @@ body {
     overflow: hidden;
 }
 
-.bio-hero {
-    width: 100%;
-    min-height: 48vh;
-    padding: 72px 22px 58px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(30, 30, 30, 0.55), rgba(30, 30, 30, 0));
-    position: relative;
-}
-
-.bio-hero::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: min(760px, 82vw);
-    height: 1px;
-    background: linear-gradient(to right, transparent, #fff4c2, #c9a227, #fff4c2, transparent);
-}
-
-.bio-kicker {
-    margin: 0 0 10px;
-    font-family: Doulossil;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #fff0b0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-}
-
 #white-panel {
     width: min(1120px, 92vw);
     margin: -34px auto 0;
@@ -703,22 +610,6 @@ body {
 
 #white-panel::before {
     display: none;
-}
-
-.bio-title {
-    margin: 0;
-    font-size: clamp(52px, 8vw, 92px);
-    color: white;
-    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.42);
-}
-
-.bio-intro {
-    max-width: 720px;
-    margin: 16px auto 0;
-    font-size: 19px;
-    line-height: 1.8;
-    color: white;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .bio-image {
@@ -835,7 +726,7 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.25s ease;
     box-shadow: 0 12px 24px rgba(30, 30, 30, 0.18);
 }
 
@@ -848,11 +739,11 @@ body {
 /* LOGIN PAGE */
 
 .login-page {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
     align-items: center;
     min-height: 85vh;
-    padding: 40px 20px;
     background:
         linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)),
         url("/app/static/images/pink-marble.png") no-repeat center/cover;
@@ -877,32 +768,6 @@ body {
     border: 1px solid rgba(201, 162, 39, 0.35);
     border-radius: 28px;
     pointer-events: none;
-}
-
-.login-header {
-    margin-bottom: 28px;
-}
-
-.login-kicker {
-    margin: 0 0 10px;
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #c9a227;
-}
-
-.login-header h1 {
-    margin: 0;
-    font-size: 42px;
-    color: rgb(30, 30, 30);
-}
-
-.login-subtitle {
-    margin: 10px auto 0;
-    max-width: 420px;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #6f6f6f;
 }
 
 .auth-form {
@@ -969,21 +834,6 @@ body {
     transform: translateY(-2px);
 }
 
-@media screen and (max-width: 768px) {
-    .login-panel {
-        padding: 34px 24px 28px;
-        border-radius: 28px;
-    }
-
-    .login-header h1 {
-        font-size: 34px;
-    }
-
-    .login-subtitle {
-        font-size: 14px;
-    }
-}
-
 /* COMMUNITY PAGE */
 
 .community-section {
@@ -1001,56 +851,10 @@ body {
     text-align: center;
 }
 
-.community-hero {
-    width: 100%;
-    min-height: 48vh;
-    padding: 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background:
-        linear-gradient(rgba(30, 30, 30, 0.55), rgba(30, 30, 30, 0));
-    position: relative;
-}
-
-.community-kicker {
-    margin: 0;
-    font-family: Doulossil;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #c9a227;
-}
-
-.community-hero .community-kicker {
-    color: #fff0b0;
-    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
-}
-
-.community-title {
-    margin: -25px 0 0 0;
-    font-size: 80px;
-    color: white;
-    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
-}
-
-.community-intro {
-    max-width: 720px;
-    margin: 16px auto 0;
-    font-size: 19px;
-    line-height: 1.8;
-    color: white;
-    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
-}
-
 #newsletter-section {
     width: min(900px, 90vw);
-    margin: 0 auto 68px;
-    padding: 46px min(7vw, 66px);
+    margin: 0 auto 50px;
+    padding: 50px;
     box-sizing: border-box;
     text-align: center;
     background: white;
@@ -1065,6 +869,11 @@ body {
     font-size: 50px;
     color: rgb(30 30 30);
     text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
+}
+
+#newsletter-section .kicker {
+    color: #c9a227;
+    text-shadow: none;
 }
 
 .newsletter-card {
@@ -1089,24 +898,52 @@ body {
     color: rgb(30 30 30);
 }
 
+.community-quote {
+    width: 100%;
+    padding: 56px 22px;
+    box-sizing: border-box;
+    /* background: linear-gradient(135deg, #fff7fb, #ffffff); */
+    /* border-top: 1px solid rgba(201, 162, 39, 0.35); */
+}
+
+.community-quote p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-family: Doulossil;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.1;
+    color: #b88914;
+}
+
 #reviews-section {
     width: 100%;
     padding: 0 22px 68px;
     box-sizing: border-box;
-    background:
-        linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.92)),
-        url("/app/static/images/pink-marble.png") center/cover fixed;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
 }
 
-#reviews-section h1 {
+
+/* #reviews-section h1 {
     margin: 0 0 18px;
     font-size: 54px;
+    text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
+} */
+
+#reviews-section h1 {
+    margin: 0;
+    font-size: 50px;
     color: rgb(30 30 30);
     text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
 }
 
-#reviews-section > a {
+
+#reviews-section a, .community-section a {
     display: inline-block;
     margin-bottom: 28px;
     padding: 13px 22px;
@@ -1122,27 +959,12 @@ body {
     box-shadow: 0 12px 24px rgba(30, 30, 30, 0.18);
 }
 
-.reviews-card {
-    width: min(760px, 90vw);
-    margin: 0 auto 22px;
-    padding: 28px min(6vw, 46px);
-    box-sizing: border-box;
-    background: white;
-    border: 3px solid rgba(30 30 30 / 0.75);
-    border-radius: 8px;
-    box-shadow: 0 24px 54px rgba(30, 30, 30, 0.24);
-}
-
 .reviews-card h3 {
     margin: 0 0 8px;
     font-family: Doulossil;
     color: rgb(30 30 30);
 }
 
-.reviews-card p {
-    margin: 0 0 10px;
-    color: #c9a227;
-}
 
 .reviews-card .review {
     margin: 0;
@@ -1150,16 +972,43 @@ body {
     line-height: 1.7;
 }
 
-.review-container {
+.reviews-card {
+    background-color: white;
+    border: 3px solid rgba(30 30 30 / 0.75);
+    border-radius: 8px;
+    box-shadow: 0 24px 54px rgba(30, 30, 30, 0.24);
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+}
+
+.reviews-card h3, .reviews-card p {
+    margin: 10px;
+}
+
+.reviews-card p {
+    margin: 0 0 10px;
+    color: #c9a227;
+}
+
+
+/* REVIEWS FORM PAGE */
+
+#review-page {
     min-height: 80vh;
+    background: url("/app/static/images/pink-marble.png") center/cover fixed;
+}
+
+.review-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -50px;
     padding: 68px 22px;
     box-sizing: border-box;
-    background:
-        linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1)),
-        url("/app/static/images/pink-marble.png") center/cover fixed;
 }
 
 .review-container form {
@@ -1173,12 +1022,12 @@ body {
     box-shadow: 0 24px 54px rgba(30, 30, 30, 0.24);
 }
 
-.review-container h1 {
+/* .review-container h1 {
     margin: 0 0 22px;
     font-size: 52px;
     color: rgb(30 30 30);
     text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
-}
+} */
 
 #star-container {
     display: flex;
@@ -1259,53 +1108,110 @@ body {
     box-shadow: 0 12px 24px rgba(30, 30, 30, 0.18);
 }
 
-.community-quote {
-    width: 100%;
-    padding: 56px 22px;
-    box-sizing: border-box;
-    /* background: linear-gradient(135deg, #fff7fb, #ffffff); */
-    /* border-top: 1px solid rgba(201, 162, 39, 0.35); */
-}
+/* NEWSLETTER EXPANDED PAGE */
 
-.community-quote p {
-    max-width: 760px;
-    margin: 0 auto;
-    font-family: Doulossil;
-    font-style: italic;
-    font-size: 30px;
-    line-height: 1.1;
-    color: #b88914;
-}
-
-#reviews-section {
+#newsletter-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50px;
+    min-height: 85vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)), url(/app/static/images/pink-marble.png) no-repeat center / cover;
 }
 
-#reviews-section h1 {
-    margin: 0;
-    font-size: 50px;
+#newsletter-panel {
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    /* background: rgba(255, 255, 255, 0.94);
+    border: 3px solid #c9a227;
+    border-radius: 38px; */
+    text-align: center;
+    /* box-shadow: 0 20px 55px rgba(30, 30, 30, 0.14);
+    position: relative;
+    overflow: hidden; */
+}
+
+.single-newsletter {
+    width: 50vw;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border: 3px solid #c9a227;
+    border-radius: 10px;
+    box-shadow: 0 24px 54px rgba(30, 30, 30, 0.24);
+}
+
+.single-newsletter h2 {
+    color: #c9a227;
+    font-size: 25px;
+}
+
+.pagination {
+    background-color: white;
+    border: 3px solid #c9a227;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px 10px 5px;
+    font-family: Brittany;
+    font-size: 20px;
+}
+
+.pagination a {
+    font-family: Brittany;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#newsletter-page h1 {
+    margin: -25px 0 0 0;
+    font-size: 80px;
+    color: white;
     text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
 }
 
-.reviews-card {
-    background-color: white;
-    border: 3px solid rgba(30 30 30 / 0.75);
-    border-radius: 8px;
-    box-shadow: 0 24px 54px rgba(30, 30, 30, 0.24);
+/* OWNER PORTAL NEWSLETTER LIST VIEW  */
+
+#newslist {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 35vw;
-    padding: 10px;
-    margin: 10px;
-    text-align: left;
+    gap: 30px;
+    background-color: white;
+    border: 3px solid #c9a227;
+    border-radius: 10px;
+    padding: 50px;
 }
 
-.reviews-card h3, .reviews-card p {
-    margin: 10px;
+#newslist h2 {
+    margin: 0;
+    color:#c9a227;
+}
+
+#news-column-1, #news-column-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap: 10px;
+}
+
+#news-column-1 p {
+    margin: 0;
+}
+
+#newsletter-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#cancel {
+    margin-top: 10px;
+    background: linear-gradient(to right, rgb(136, 136, 136), rgb(182, 182, 182));
 }
 
 /* REVIEWS PAGE */
@@ -1405,7 +1311,7 @@ body {
     font-size: 14px;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.25s ease;
 } 
 
 /* MOBILE STYLING */
