@@ -4,13 +4,12 @@
 
 {% block content %}
 <div class="login-page">
+    <div class="hero">
+        <p class="kicker">Starbright Cafe</p>
+        <h1 class="title">Welcome Back</h1>
+        <p class="intro">Sign in and step back into your favorite little corner of Coffeeville.</p>
+    </div>
     <div class="login-panel">
-        <div class="hero">
-            <p class="kicker">Starbright Cafe</p>
-            <h1 class="title">Welcome Back</h1>
-            <p class="intro">Sign in and step back into your favorite little corner of Coffeeville.</p>
-        </div>
-
         <form method="POST" class="auth-form">
             {% csrf_token %}
             {{ form.as_p }}

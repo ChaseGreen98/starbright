@@ -705,9 +705,10 @@ body {
 
 .bio-story-heading {
     margin: 0;
+    margin-bottom: -10px;
     font-family: Brittany;
-    font-size: clamp(38px, 5vw, 58px);
-    line-height: 1;
+    font-size: 50px;
+    /* line-height: 1; */
     text-transform: none;
     color: rgb(30 30 30);
 }
@@ -739,9 +740,8 @@ body {
 /* LOGIN PAGE */
 
 .login-page {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    justify-content: center; */
     align-items: center;
     min-height: 85vh;
     background:
@@ -759,6 +759,7 @@ body {
     box-shadow: 0 20px 55px rgba(30, 30, 30, 0.14);
     position: relative;
     overflow: hidden;
+    margin-bottom: 75px;
 }
 
 .login-panel::before {
@@ -1116,7 +1117,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 85vh;
-    background: linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)), url(/app/static/images/pink-marble.png) no-repeat center / cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)), url(/app/static/images/pink-marble.png) no-repeat center / cover fixed;
 }
 
 #newsletter-panel {
@@ -1164,12 +1165,12 @@ body {
     text-decoration: none;
 }
 
-#newsletter-page h1 {
+/* #newsletter-page h1 {
     margin: -25px 0 0 0;
     font-size: 80px;
     color: white;
     text-shadow: 0px 3px 20px rgba(30, 30, 30, 0.3);
-}
+} */
 
 /* OWNER PORTAL NEWSLETTER LIST VIEW  */
 
@@ -1317,6 +1318,22 @@ body {
 /* MOBILE STYLING */
 
 @media screen and (max-width: 768px) {
+
+    /* BASE STYLING */
+
+    .hero {
+
+    }
+
+    .title {
+        font-size: 50px;
+        line-height: 100%;
+        margin-top: 20px;
+    }
+
+    .intro {
+
+    }
 
     /* NAVBAR */
 
@@ -1481,18 +1498,9 @@ body {
 
     /* COMMUNITY */
 
-    .community-hero {
-        min-height: 42vh;
-        padding: 54px 22px 46px;
-    }
-
-    .community-title {
-        font-size: 52px;
-    }
-
-    .community-intro {
-        font-size: 16px;
-        line-height: 1.65;
+    .community-section {
+        margin: 0;
+        padding-bottom: 20px;
     }
 
     .community-cards {
@@ -1515,6 +1523,7 @@ body {
 
     #newsletter-section h1 {
         font-size: 38px;
+        margin-top: 20px;
     }
 
     .newsletter-card p {
@@ -1553,27 +1562,13 @@ body {
     }
 
     .community-quote {
-        padding: 42px 22px;
+        padding: 20px;
     }
 
     /* BEHIND THE COUNTER */
 
     .bio-section {
         padding-bottom: 44px;
-    }
-
-    .bio-hero {
-        min-height: 42vh;
-        padding: 54px 22px 46px;
-    }
-
-    .bio-title {
-        font-size: 52px;
-    }
-
-    .bio-intro {
-        font-size: 16px;
-        line-height: 1.65;
     }
 
     #white-panel {
@@ -1619,20 +1614,6 @@ body {
         padding-bottom: 44px;
     }
 
-    .owner-portal-hero {
-        min-height: 38vh;
-        padding: 54px 22px 46px;
-    }
-
-    .owner-portal-hero h1 {
-        font-size: 52px;
-    }
-
-    .owner-portal-hero p:last-child {
-        font-size: 16px;
-        line-height: 1.65;
-    }
-
     .owner-action-panel {
         width: min(88vw, 460px);
         margin-top: -24px;
@@ -1653,20 +1634,6 @@ body {
     .news_form_container,
     .news_update_form_container {
         padding-bottom: 44px;
-    }
-
-    .newsletter-form-hero {
-        min-height: 36vh;
-        padding: 54px 22px 46px;
-    }
-
-    .newsletter-form-hero h1 {
-        font-size: 48px;
-    }
-
-    .newsletter-form-hero p:last-child {
-        font-size: 16px;
-        line-height: 1.65;
     }
 
     .newsletter-form-panel {
@@ -1700,6 +1667,30 @@ body {
         width: 40vw;
         height: 1px;
         margin: 20px;
+    }
+
+    #news-column-1, #news-column-2 {
+        font-size: 15px;
+        text-align: center;
+        max-height: 200px;
+    }
+
+    #news-column-1 p {
+        max-width: 150px;
+        max-height: 50px;
+    }
+
+    #newsletter-actions {
+        max-height: 50px;
+    }
+
+    #newsletter-panel {
+        margin-top: -20px;
+        width: 90vw;
+    }
+
+    .single-newsletter {
+        width: fit-content;
     }
 
 }
